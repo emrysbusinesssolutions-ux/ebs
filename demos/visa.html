@@ -1,0 +1,1027 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visa &amp; immigration — EBS Enterprise Demo</title>
+<meta name="description" content="Interactive visa consultancy demo: applicant cases, document checklists with expiry alerts, embassy appointments and fee instalments — fictional sample data.">
+<link rel="canonical" href="https://emrysbusiness.com/demos/visa.html">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a1024">
+<meta property="og:image" content="https://emrysbusiness.com/assets/img/og.jpg">
+<link rel="icon" href="../assets/img/favicon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="preload" href="../assets/fonts/inter-tight-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/instrument-sans-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/style.css?v=20261021i">
+<link rel="stylesheet" href="../assets/css/app.css?v=20261021i">
+</head>
+<body class="app-body" data-module="visa">
+<header class="app-topbar">
+  <div class="app-topbar__left">
+    <a class="app-brand" href="../index.html" aria-label="Emrys Business Solutions home">
+      <img src="../assets/img/ebs-logo-circle-96.png" alt="" width="28" height="28">
+      <span>Emrys <b>Demo</b></span>
+    </a>
+    <span class="app-env">Sample data · no live records</span>
+  </div>
+  <div class="app-topbar__right">
+    <label class="app-currency"><span>Currency</span><select data-currency-select aria-label="Display currency"></select></label>
+    <a class="app-topbar__link" href="../demo.html">All demos</a>
+    <a class="app-topbar__link" href="../index.html">Website</a>
+    <a class="app-btn app-btn--primary" href="../contact.html">Book a demo</a>
+    <button class="app-menu" type="button" data-app-menu aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="app-shell">
+  <aside class="app-side" id="appSide">
+    <div class="app-side__group"><span>Operations</span>
+      <a class="app-nav" data-nav="pos" href="pos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M7 20h10M12 16v4"/></svg>POS &amp; checkout</a>
+      <a class="app-nav" data-nav="inventory" href="inventory.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></svg>Inventory</a>
+      <a class="app-nav" data-nav="purchasing" href="purchasing.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M6 6v14h12V6M9 10h6"/></svg>Purchasing</a>
+      <a class="app-nav" data-nav="warehouse" href="warehouse.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13M3 21h18M9 21v-6h6v6"/></svg>Warehouse</a>
+    </div>
+    <div class="app-side__group"><span>People &amp; finance</span>
+      <a class="app-nav" data-nav="crm" href="crm.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>CRM</a>
+      <a class="app-nav" data-nav="hr" href="hr.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg>HR &amp; payroll</a>
+      <a class="app-nav" data-nav="accounting" href="accounting.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3h16v18H4zM8 7h8M8 11h8M8 15h5"/></svg>Accounting</a>
+      <a class="app-nav" data-nav="projects" href="projects.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4zM8 8h8M8 12h5"/></svg>Projects</a>
+    </div>
+    <div class="app-side__group"><span>Growth</span>
+      <a class="app-nav" data-nav="analytics" href="analytics.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15v-4M12 15V7M17 15v-6"/></svg>Analytics</a>
+      <a class="app-nav" data-nav="ecommerce" href="ecommerce.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6 5 3H2"/></svg>E-commerce</a>
+    </div>
+    <div class="app-side__group"><span>Specialized</span>
+      <a class="app-nav" data-nav="visa" href="visa.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M9 16h6"/></svg>Visa &amp; immigration</a>
+    </div>
+    <div class="app-side__foot">
+      <div class="app-side__note"><b>Sample workspace.</b><br>Fictional applicants and cases · USD base · switch display currency. No real applications or approvals.</div>
+      <a href="../demo.html">All demos</a>
+      <a href="../index.html">Back to website</a>
+    </div>
+  </aside>
+
+  <main class="app-main">
+    <div class="app-head">
+      <div>
+        <p class="app-eyebrow"><a href="../demo.html">&larr; All demos</a> · Visa &amp; immigration</p>
+        <h1>Immigration case desk</h1>
+        <p class="app-sub">Follow each application from enquiry to post-landing — document checklists, embassy and VFS appointments, fee instalments and an attributed audit trail. Fictional sample cases; USD base with display-currency switching.</p>
+      </div>
+      <div class="app-actions">
+        <button class="app-btn app-btn--secondary" type="button" data-export-visa>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+          Export CSV
+        </button>
+        <button class="app-btn app-btn--primary" type="button" data-new-case>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+          New case
+        </button>
+      </div>
+    </div>
+
+    <div class="app-kpis">
+      <div class="app-kpi">
+        <div class="app-kpi__label">Active cases</div>
+        <div class="app-kpi__value" id="kpiActive">—</div>
+        <div class="app-kpi__meta" id="kpiActiveMeta">—</div>
+      </div>
+      <div class="app-kpi">
+        <div class="app-kpi__label">Lodged this month</div>
+        <div class="app-kpi__value" id="kpiLodged">—</div>
+        <div class="app-kpi__meta" id="kpiLodgedMeta">—</div>
+      </div>
+      <div class="app-kpi">
+        <div class="app-kpi__label">Decision rate</div>
+        <div class="app-kpi__value" id="kpiDecision">—</div>
+        <div class="app-kpi__meta" id="kpiDecisionMeta">—</div>
+      </div>
+      <div class="app-kpi">
+        <div class="app-kpi__label">Fees outstanding</div>
+        <div class="app-kpi__value" id="kpiFees">—</div>
+        <div class="app-kpi__meta" id="kpiFeesMeta">—</div>
+      </div>
+      <div class="app-kpi">
+        <div class="app-kpi__label">Documents expiring · 30 days</div>
+        <div class="app-kpi__value" id="kpiDocs">—</div>
+        <div class="app-kpi__meta" id="kpiDocsMeta">—</div>
+      </div>
+    </div>
+
+    <div class="app-grid">
+      <section class="app-panel" aria-label="Applicant cases">
+        <div class="app-panel__head">
+          <div class="app-panel__title">Cases <small id="caseCount">—</small></div>
+          <span class="app-badge app-badge--neutral">Sample pipeline</span>
+        </div>
+        <div class="app-panel__body">
+          <div class="app-toolbar">
+            <div class="app-search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+              <input type="search" id="caseSearch" placeholder="Search applicant, nationality, destination, consultant" aria-label="Search cases" autocomplete="off">
+            </div>
+            <select class="app-select" id="visaFilter" aria-label="Filter by visa type">
+              <option value="All">All visa types</option>
+              <option value="Work">Work</option>
+              <option value="Student">Student</option>
+              <option value="Visitor">Visitor</option>
+              <option value="Family-dependent">Family-dependent</option>
+              <option value="Business">Business</option>
+            </select>
+            <div class="app-chip-row" id="stageFilters" role="group" aria-label="Filter cases by stage">
+              <button class="app-chip is-active" type="button" data-stage="All">All</button>
+              <button class="app-chip" type="button" data-stage="Enquiry">Enquiry</button>
+              <button class="app-chip" type="button" data-stage="Consulted">Consulted</button>
+              <button class="app-chip" type="button" data-stage="Documents pending">Documents pending</button>
+              <button class="app-chip" type="button" data-stage="Application lodged">Application lodged</button>
+              <button class="app-chip" type="button" data-stage="Biometrics / interview">Biometrics</button>
+              <button class="app-chip" type="button" data-stage="Decision">Decision</button>
+              <button class="app-chip" type="button" data-stage="Visa issued">Visa issued</button>
+              <button class="app-chip" type="button" data-stage="Post-landing">Post-landing</button>
+            </div>
+          </div>
+          <div class="app-table-wrap">
+            <table class="app-table" id="caseTable">
+              <thead>
+                <tr>
+                  <th>Applicant</th>
+                  <th>Visa</th>
+                  <th>Stage</th>
+                  <th>Consultant / branch</th>
+                  <th>Documents</th>
+                  <th class="num">Fees</th>
+                  <th>Next step</th>
+                  <th class="actions">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="caseBody"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="app-panel__foot">
+          <span id="caseResult">—</span>
+          <span>USD base · display currency only</span>
+        </div>
+      </section>
+
+      <div class="stack">
+        <section class="app-panel app-panel--side" aria-label="Cases by stage">
+          <div class="app-panel__head">
+            <div class="app-panel__title">Pipeline by stage</div>
+            <span class="app-badge app-badge--info" id="pipelineCount">—</span>
+          </div>
+          <div class="app-panel__body">
+            <div id="pipelineChart"></div>
+            <div class="app-rows" id="pipelineRows"></div>
+          </div>
+          <div class="app-panel__foot"><span>Open cases only</span><span>Sample</span></div>
+        </section>
+
+        <section class="app-panel app-panel--side" aria-label="Appointments and reminders">
+          <div class="app-panel__head">
+            <div class="app-panel__title">Appointments &amp; reminders</div>
+            <span class="app-badge app-badge--warn" id="appointmentCount">—</span>
+          </div>
+          <div class="app-panel__body">
+            <div class="app-activity" id="appointmentList"></div>
+          </div>
+          <div class="app-panel__foot"><span>Embassy · consulate · VFS centre</span><span>Sample</span></div>
+        </section>
+
+        <section class="app-panel app-panel--side" aria-label="Audit trail">
+          <div class="app-panel__head">
+            <div class="app-panel__title">Audit trail <small>who changed what</small></div>
+            <span class="app-badge app-badge--neutral" id="auditCount">—</span>
+          </div>
+          <div class="app-panel__body">
+            <div class="app-activity" id="auditList"></div>
+          </div>
+          <div class="app-panel__foot"><span>Illustrative compliance log</span><span>Sample</span></div>
+        </section>
+
+        <div class="app-note"><b>Sample workspace.</b> Fictional applicants, consultants and cases — not legal advice, and no real clients, applications or approvals. Sample data · display currency only · fees quoted in USD.</div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="../assets/js/currency.js?v=20261021i" defer></script>
+<script src="../assets/js/app.js?v=20261021i" defer></script>
+<script src="../assets/js/main.js?v=20261021i" defer></script>
+<script>
+/* ==========================================================================
+   Visa & immigration demo — fictional sample cases, no live records.
+   Base amounts are USD; every money value is rendered through EBSApp.money.
+   This page is intentionally self-contained: shared shell + local state only.
+   ========================================================================== */
+(() => {
+  'use strict';
+
+  let App, money, status, toast, openDrawer, closeDrawer, chartBars, exportCSV, esc;
+
+  const $ = (sel, ctx = document) => ctx.querySelector(sel);
+  const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
+
+  const DAY = 86400000;
+  const STAGES = ['Enquiry', 'Consulted', 'Documents pending', 'Application lodged', 'Biometrics / interview', 'Decision', 'Visa issued', 'Post-landing'];
+  const STAGE_TONE = {
+    Enquiry: 'neutral', Consulted: 'info', 'Documents pending': 'warn',
+    'Application lodged': 'info', 'Biometrics / interview': 'warn',
+    Decision: 'info', 'Visa issued': 'ok', 'Post-landing': 'ok'
+  };
+  const STAGE_NEXT = {
+    Enquiry: ['Eligibility call', 2],
+    Consulted: ['Share fee proposal', 1],
+    'Documents pending': ['Collect outstanding documents', 3],
+    'Application lodged': ['Track application', 7],
+    'Biometrics / interview': ['Prepare interview pack', 2],
+    Decision: ['Await decision letter', 5],
+    'Visa issued': ['Pre-departure briefing', 4],
+    'Post-landing': ['Arrival check-in', 10]
+  };
+  const VISA_TYPES = ['Work', 'Student', 'Visitor', 'Family-dependent', 'Business'];
+  const DESTINATIONS = ['Japan', 'South Korea', 'Thailand', 'UK', 'Australia', 'Canada', 'Schengen'];
+  const DOC_TYPES = ['Passport', 'Photo', 'Bank statement', 'Employment letter', 'IELTS / test score', 'Medical', 'Police clearance'];
+  const CONSULTANTS = ['Amara Osei', 'Lukas Weber', 'Mei Lin Chow', 'Rafael Costa', 'Zara Khan'];
+  const BRANCHES = ['Bangkok · Silom', 'Kuala Lumpur · KLCC', 'Manila · Makati', 'Jakarta · Sudirman', 'Hanoi · Hoan Kiem', 'Dubai · Deira', 'Singapore · Tanjong Pagar', 'Taipei · Xinyi'];
+
+  const startOfToday = () => { const d = new Date(); d.setHours(0, 0, 0, 0); return d; };
+  const isoOffset = offset => {
+    const d = new Date(startOfToday().getTime() + offset * DAY);
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  };
+  const dayDiff = iso => {
+    const parts = String(iso || '').split('-').map(Number);
+    if (parts.length !== 3 || parts.some(Number.isNaN)) return 0;
+    const d = new Date(parts[0], parts[1] - 1, parts[2]);
+    return Math.round((d.getTime() - startOfToday().getTime()) / DAY);
+  };
+  const fmtDate = iso => {
+    if (!iso) return '—';
+    return new Date(`${iso}T00:00:00`).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+  };
+  const fmtShort = iso => {
+    if (!iso) return '—';
+    return new Date(`${iso}T00:00:00`).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+  };
+  const initials = name => String(name || '?').split(/\s+/).filter(Boolean).slice(0, 2)
+    .map(word => word.replace(/[^A-Za-z]/g, '').charAt(0)).join('').toUpperCase() || '?';
+
+  const docsFor = (statuses, offsets) => DOC_TYPES.map((name, index) => ({
+    name,
+    status: statuses[index],
+    expiry: offsets[index] == null ? null : isoOffset(offsets[index])
+  }));
+
+  let nextId = 2053;
+
+  /* ── sample cases (all names and records are fictional) ─────────────── */
+  const cases = [
+    {
+      id: 'VC-2041', name: 'Mara Villanueva', nationality: 'Filipino', destination: 'Japan',
+      visaType: 'Work', consultant: 'Amara Osei', branch: 'Bangkok · Silom',
+      stage: 'Enquiry', opened: isoOffset(-19), lodged: null, outcome: null,
+      docs: docsFor(
+        ['Ready', 'Pending', 'Pending', 'Missing', 'Missing', 'Missing', 'Pending'],
+        [610, null, 25, 80, null, 120, 60]
+      ),
+      total: 1850, paid: 550, feeDue: isoOffset(9),
+      appointment: null,
+      nextStep: 'Eligibility call', nextDue: isoOffset(2),
+      notes: [{ who: 'Amara Osei', text: 'Caregiver placement enquiry logged — sample record only.', when: '2d ago' }]
+    },
+    {
+      id: 'VC-2042', name: 'Arun Kapoor', nationality: 'Indian', destination: 'UK',
+      visaType: 'Student', consultant: 'Lukas Weber', branch: 'Kuala Lumpur · KLCC',
+      stage: 'Enquiry', opened: isoOffset(-12), lodged: null, outcome: null,
+      docs: docsFor(
+        ['Ready', 'Ready', 'Pending', 'Missing', 'Ready', 'Missing', 'Pending'],
+        [1200, null, 12, 45, 300, 90, 45]
+      ),
+      total: 2400, paid: 1200, feeDue: isoOffset(12),
+      appointment: null,
+      nextStep: 'Send document checklist', nextDue: isoOffset(1),
+      notes: [{ who: 'Lukas Weber', text: 'University offer letter sighted for demo purposes.', when: '1d ago' }]
+    },
+    {
+      id: 'VC-2043', name: 'Lina Marchetti', nationality: 'Italian', destination: 'Canada',
+      visaType: 'Business', consultant: 'Mei Lin Chow', branch: 'Singapore · Tanjong Pagar',
+      stage: 'Consulted', opened: isoOffset(-31), lodged: null, outcome: null,
+      docs: docsFor(
+        ['Ready', 'Ready', 'Ready', 'Pending', 'Missing', 'Missing', 'Pending'],
+        [800, null, 30, 60, null, 150, 90]
+      ),
+      total: 3200, paid: 1000, feeDue: isoOffset(5),
+      appointment: null,
+      nextStep: 'Share fee proposal', nextDue: isoOffset(0),
+      notes: [{ who: 'Mei Lin Chow', text: 'Investor stream consultation completed — illustrative.', when: '3d ago' }]
+    },
+    {
+      id: 'VC-2044', name: 'Omar Haddad', nationality: 'Lebanese', destination: 'Schengen',
+      visaType: 'Visitor', consultant: 'Amara Osei', branch: 'Dubai · Deira',
+      stage: 'Documents pending', opened: isoOffset(-24), lodged: null, outcome: null,
+      docs: docsFor(
+        ['Ready', 'Ready', 'Pending', 'Ready', 'Missing', 'Ready', 'Ready'],
+        [420, null, -3, 55, null, 75, 40]
+      ),
+      total: 900, paid: 900, feeDue: isoOffset(-2),
+      appointment: null,
+      nextStep: 'Replace expired bank statement', nextDue: isoOffset(3),
+      notes: [{ who: 'Amara Osei', text: 'Bank statement older than 30 days — sample compliance flag.', when: '4h ago' }]
+    },
+    {
+      id: 'VC-2045', name: 'Priya Nair', nationality: 'Indian', destination: 'Australia',
+      visaType: 'Work', consultant: 'Rafael Costa', branch: 'Manila · Makati',
+      stage: 'Documents pending', opened: isoOffset(-27), lodged: null, outcome: null,
+      docs: docsFor(
+        ['Ready', 'Ready', 'Ready', 'Ready', 'Ready', 'Pending', 'Ready'],
+        [950, null, 18, 70, 260, 28, 50]
+      ),
+      total: 2650, paid: 1500, feeDue: isoOffset(18),
+      appointment: {
+        kind: 'VFS centre',
+        place: 'Australian visa application centre · New Delhi',
+        date: isoOffset(12), time: '10:00', reminder: 'Email · 2 days before'
+      },
+      nextStep: 'Upload medical certificate', nextDue: isoOffset(2),
+      notes: [{ who: 'Rafael Costa', text: 'Medical certificate expires soon — sample reminder prepared.', when: '6h ago' }]
+    },
+    {
+      id: 'VC-2046', name: 'Daniel Okafor', nationality: 'Nigerian', destination: 'UK',
+      visaType: 'Student', consultant: 'Zara Khan', branch: 'Dubai · Deira',
+      stage: 'Application lodged', opened: isoOffset(-46), lodged: isoOffset(-6), outcome: null,
+      docs: docsFor(
+        ['Ready', 'Ready', 'Ready', 'Ready', 'Ready', 'Ready', 'Ready'],
+        [1300, null, 60, 90, 280, 200, 75]
+      ),
+      total: 2400, paid: 2400, feeDue: isoOffset(-5),
+      appointment: {
+        kind: 'VFS centre',
+        place: 'UK visa application centre · Lagos',
+        date: isoOffset(6), time: '09:30', reminder: 'Email + SMS · 3 days before'
+      },
+      nextStep: 'Track application', nextDue: isoOffset(7),
+      notes: [
+        { who: 'Zara Khan', text: 'Application lodged with the visa office — illustrative tracking only.', when: '6d ago' },
+        { who: 'Zara Khan', text: 'Biometrics slot booked at the VFS centre — sample appointment.', when: '1d ago' }
+      ]
+    },
+    {
+      id: 'VC-2047', name: 'Sofia Almeida', nationality: 'Brazilian', destination: 'Canada',
+      visaType: 'Work', consultant: 'Mei Lin Chow', branch: 'Jakarta · Sudirman',
+      stage: 'Application lodged', opened: isoOffset(-52), lodged: isoOffset(-11), outcome: null,
+      docs: docsFor(
+        ['Ready', 'Ready', 'Ready', 'Ready', 'Ready', 'Ready', 'Ready'],
+        [700, null, 40, 65, 320, 180, 55]
+      ),
+      total: 2950, paid: 1800, feeDue: isoOffset(21),
+      appointment: {
+        kind: 'Consulate',
+        place: 'Consulate General of Canada · São Paulo',
+        date: isoOffset(9), time: '13:30', reminder: 'Email · 1 day before'
+      },
+      nextStep: 'Track application', nextDue: isoOffset(5),
+      notes: [{ who: 'Mei Lin Chow', text: 'Employer sponsorship reference noted — sample file.', when: '11d ago' }]
+    },
+    {
+      id: 'VC-2048', name: 'Kenji Watanabe', nationality: 'Japanese', destination: 'Australia',
+      visaType: 'Family-dependent', consultant: 'Amara Osei', branch: 'Taipei · Xinyi',
+      stage: 'Biometrics / interview', opened: isoOffset(-63), lodged: isoOffset(-28), outcome: null,
+      docs: docsFor(
+        ['Ready', 'Ready', 'Ready', 'Ready', 'Ready', 'Ready', 'Ready'],
+        [26, null, 50, 75, 250, 24, 60]
+      ),
+      total: 2100, paid: 700, feeDue: isoOffset(7),
+      appointment: {
+        kind: 'Biometrics centre',
+        place: 'Australian biometrics centre · Osaka',
+        date: isoOffset(2), time: '11:00', reminder: 'SMS · 1 day before'
+      },
+      nextStep: 'Prepare interview pack', nextDue: isoOffset(1),
+      notes: [{ who: 'Amara Osei', text: 'Partner sponsorship documents verified — illustrative.', when: '2d ago' }]
+    },
+    {
+      id: 'VC-2049', name: 'Aigerim Bekova', nationality: 'Kazakh', destination: 'South Korea',
+      visaType: 'Student', consultant: 'Lukas Weber', branch: 'Kuala Lumpur · KLCC',
+      stage: 'Biometrics / interview', opened: isoOffset(-39), lodged: isoOffset(-8), outcome: null,
+      docs: docsFor(
+        ['Ready', 'Ready', 'Ready', 'Ready', 'Ready', 'Ready', 'Ready'],
+        [1100, null, 55, 85, 290, 240, 65]
+      ),
+      total: 2200, paid: 1100, feeDue: isoOffset(14),
+      appointment: {
+        kind: 'Embassy',
+        place: 'Embassy of the Republic of Korea · Almaty',
+        date: isoOffset(4), time: '14:15', reminder: 'Email · 2 days before'
+      },
+      nextStep: 'Attend embassy interview', nextDue: isoOffset(4),
+      notes: [{ who: 'Lukas Weber', text: 'Interview pack assigned to consultant — sample.', when: '1d ago' }]
+    },
+    {
+      id: 'VC-2050', name: 'Ravi Shrestha', nationality: 'Nepali', destination: 'Japan',
+      visaType: 'Work', consultant: 'Zara Khan', branch: 'Bangkok · Silom',
+      stage: 'Decision', opened: isoOffset(-88), lodged: isoOffset(-48), outcome: 'Refused',
+      docs: docsFor(
+        ['Ready', 'Ready', 'Ready', 'Ready', 'Ready', 'Ready', 'Ready'],
+        [640, null, 45, 70, 270, 190, 58]
+      ),
+      total: 1850, paid: 1850, feeDue: isoOffset(-30),
+      appointment: null,
+      nextStep: 'Review refusal grounds', nextDue: isoOffset(5),
+      notes: [{ who: 'Zara Khan', text: 'Refusal letter recorded; review options with applicant — sample only.', when: '3d ago' }]
+    },
+    {
+      id: 'VC-2051', name: 'Elena Petrova', nationality: 'Serbian', destination: 'UK',
+      visaType: 'Family-dependent', consultant: 'Lukas Weber', branch: 'Kuala Lumpur · KLCC',
+      stage: 'Visa issued', opened: isoOffset(-110), lodged: isoOffset(-62), outcome: 'Approved',
+      docs: docsFor(
+        ['Ready', 'Ready', 'Ready', 'Ready', 'Ready', 'Ready', 'Ready'],
+        [1500, null, 80, 100, 300, 210, 70]
+      ),
+      total: 1600, paid: 1600, feeDue: isoOffset(-40),
+      appointment: null,
+      nextStep: 'Pre-departure briefing', nextDue: isoOffset(4),
+      notes: [{ who: 'Lukas Weber', text: 'Visa vignette details recorded — sample approval, not a real decision.', when: '5d ago' }]
+    },
+    {
+      id: 'VC-2052', name: 'Marcus Tan', nationality: 'Singaporean', destination: 'Thailand',
+      visaType: 'Business', consultant: 'Mei Lin Chow', branch: 'Singapore · Tanjong Pagar',
+      stage: 'Post-landing', opened: isoOffset(-140), lodged: isoOffset(-95), outcome: 'Approved',
+      docs: docsFor(
+        ['Ready', 'Ready', 'Ready', 'Ready', 'Ready', 'Ready', 'Ready'],
+        [1600, null, 90, 120, 310, 230, 80]
+      ),
+      total: 1200, paid: 1200, feeDue: isoOffset(-80),
+      appointment: null,
+      nextStep: 'Arrival check-in', nextDue: isoOffset(10),
+      notes: [{ who: 'Mei Lin Chow', text: 'Post-landing check-in scheduled — illustrative.', when: '1w ago' }]
+    }
+  ];
+
+  const audit = [
+    { caseId: 'VC-2048', who: 'Amara Osei', what: 'Biometrics appointment confirmed (sample)', when: '12m ago' },
+    { caseId: 'VC-2050', who: 'Zara Khan', what: 'Decision letter recorded — refused (sample)', when: '1h ago' },
+    { caseId: 'VC-2051', who: 'Lukas Weber', what: 'Visa issued — approved (sample)', when: '2h ago' },
+    { caseId: 'VC-2044', who: 'Amara Osei', what: 'Bank statement flagged as expired', when: '3h ago' },
+    { caseId: 'VC-2046', who: 'Zara Khan', what: 'Application lodged confirmation uploaded', when: 'Yesterday' },
+    { caseId: 'VC-2049', who: 'Lukas Weber', what: 'Interview pack assigned to consultant', when: 'Yesterday' },
+    { caseId: 'VC-2052', who: 'Mei Lin Chow', what: 'Post-landing check-in scheduled', when: 'Mon' },
+    { caseId: 'VC-2041', who: 'Amara Osei', what: 'Eligibility call booked', when: 'Mon' }
+  ];
+
+  const state = { search: '', stage: 'All', type: 'All' };
+
+  const byId = id => cases.find(item => item.id === id);
+  const caseName = id => (byId(id) || {}).name || 'Sample case';
+  const balance = item => Math.max(0, item.total - item.paid);
+  const isFinal = item => item.stage === 'Post-landing' || item.outcome === 'Refused';
+  const isActive = item => !isFinal(item);
+  const inCurrentMonth = iso => {
+    if (!iso) return false;
+    const d = new Date(`${iso}T00:00:00`);
+    const t = startOfToday();
+    return d.getFullYear() === t.getFullYear() && d.getMonth() === t.getMonth();
+  };
+  const docStats = item => {
+    const ready = item.docs.filter(doc => doc.status === 'Ready').length;
+    const expiring = item.docs.filter(doc => doc.expiry && dayDiff(doc.expiry) >= 0 && dayDiff(doc.expiry) <= 30).length;
+    const expired = item.docs.filter(doc => doc.expiry && dayDiff(doc.expiry) < 0).length;
+    return { ready, total: item.docs.length, expiring, expired };
+  };
+  const avatarClass = index => index % 4 === 0 ? '' : ` app-avatar--${(index % 4) + 1}`;
+  const logAudit = (caseId, what, who) => {
+    const name = who || (byId(caseId) || {}).consultant || 'Demo user';
+    audit.unshift({ caseId, who: name, what, when: 'just now' });
+    if (audit.length > 40) audit.length = 40;
+  };
+
+  function docTone(doc) {
+    if (doc.expiry) {
+      const diff = dayDiff(doc.expiry);
+      if (diff < 0) return 'bad';
+      if (diff <= 30) return 'warn';
+    }
+    if (doc.status === 'Ready') return 'ok';
+    if (doc.status === 'Missing') return 'bad';
+    return 'warn';
+  }
+
+  function docLabel(doc) {
+    if (doc.expiry) {
+      const diff = dayDiff(doc.expiry);
+      if (diff < 0) return `Expired ${-diff}d ago`;
+      if (diff === 0) return 'Expires today';
+      if (diff <= 30) return `Expires in ${diff}d`;
+    }
+    return doc.status;
+  }
+
+  function appointmentBadge(appointment) {
+    const diff = dayDiff(appointment.date);
+    if (diff < 0) return 'Appointment passed';
+    if (diff === 0) return 'Appointment today';
+    if (diff === 1) return 'Appointment tomorrow';
+    return `Appointment in ${diff}d`;
+  }
+
+  function dueBadge(iso) {
+    const diff = dayDiff(iso);
+    if (diff < 0) return status(`${-diff}d overdue`, 'bad');
+    if (diff === 0) return status('Due today', 'warn');
+    if (diff === 1) return status('Due tomorrow', 'neutral');
+    return status(`Due ${fmtShort(iso)}`, 'neutral');
+  }
+
+  function feeSub(item) {
+    return balance(item) === 0 ? `settled · ${money(item.total)} total` : `of ${money(item.total)} · due ${fmtShort(item.feeDue)}`;
+  }
+
+  function avatarPerson(name, sub, index) {
+    return `<div class="app-person"><span class="app-avatar${avatarClass(index)}">${esc(initials(name))}</span><div><div class="app-person__name">${esc(name)}</div><div class="app-person__sub">${esc(sub)}</div></div></div>`;
+  }
+
+  function caseRow(item) {
+    const index = cases.indexOf(item);
+    const stats = docStats(item);
+    const pct = Math.round((stats.ready / stats.total) * 100);
+    const flags = [];
+    if (stats.expired) flags.push(status(`${stats.expired} expired`, 'bad'));
+    if (stats.expiring) flags.push(status(`${stats.expiring} expiring`, 'warn'));
+    if (!stats.expired && !stats.expiring && stats.ready === stats.total) flags.push(status('Complete', 'ok'));
+    const actions = `<button class="link-btn" type="button" data-open="${item.id}">Open</button>` +
+      (isFinal(item) ? '' : `<button class="link-btn" type="button" data-advance="${item.id}">Advance</button>`);
+
+    return `<tr>
+      <td>${avatarPerson(item.name, `${item.nationality} → ${item.destination} · ${item.id}`, index)}</td>
+      <td>${status(item.visaType, 'info')}</td>
+      <td>${status(item.stage, STAGE_TONE[item.stage] || 'neutral')}${item.outcome === 'Refused' ? ` ${status('Refused', 'bad')}` : ''}</td>
+      <td>${avatarPerson(item.consultant, item.branch, index + 1)}</td>
+      <td>
+        <div class="app-progress"><span style="width:${pct}%"></span></div>
+        <div class="muted">${stats.ready}/${stats.total} ready</div>
+        ${flags.join(' ')}
+      </td>
+      <td class="num">${money(balance(item))}<div class="muted">${feeSub(item)}</div></td>
+      <td><span class="muted">${esc(item.nextStep)}</span><br>${dueBadge(item.nextDue)}</td>
+      <td class="actions">${actions}</td>
+    </tr>`;
+  }
+
+  function renderKpis() {
+    const active = cases.filter(isActive);
+    const enquiries = active.filter(item => item.stage === 'Enquiry').length;
+    const docPending = active.filter(item => item.stage === 'Documents pending').length;
+    const lodgedMonth = cases.filter(item => inCurrentMonth(item.lodged));
+    const awaiting = cases.filter(item => item.stage === 'Decision' && item.outcome !== 'Refused').length;
+    const interviewing = active.filter(item => item.stage === 'Biometrics / interview').length;
+    const approved = cases.filter(item => item.outcome === 'Approved').length;
+    const refused = cases.filter(item => item.outcome === 'Refused').length;
+    const decided = approved + refused;
+    const rate = decided ? Math.round((approved / decided) * 100) : 0;
+    const outstanding = cases.reduce((sum, item) => sum + balance(item), 0);
+    const withBalance = cases.filter(item => balance(item) > 0).length;
+    const dueSoon = cases.filter(item => balance(item) > 0 && dayDiff(item.feeDue) >= 0 && dayDiff(item.feeDue) <= 7).length;
+    const expiringDocs = active.reduce((sum, item) => sum + docStats(item).expiring, 0);
+    const affected = active.filter(item => docStats(item).expiring > 0).length;
+    const expiredDocs = active.reduce((sum, item) => sum + docStats(item).expired, 0);
+
+    $('#kpiActive').textContent = String(active.length);
+    $('#kpiActiveMeta').textContent = `${enquiries} enquiries · ${docPending} documents pending`;
+    $('#kpiLodged').textContent = String(lodgedMonth.length);
+    $('#kpiLodgedMeta').textContent = `${awaiting} awaiting decision · ${interviewing} at biometrics`;
+    $('#kpiDecision').textContent = `${rate}%`;
+    $('#kpiDecisionMeta').textContent = `${approved} issued · ${refused} refused · sample only`;
+    $('#kpiFees').textContent = money(outstanding, { compact: true });
+    $('#kpiFeesMeta').textContent = `${withBalance} cases with balance · ${dueSoon} due within 7 days`;
+    $('#kpiDocs').textContent = String(expiringDocs);
+    $('#kpiDocsMeta').textContent = `${affected} active cases · ${expiredDocs} already expired`;
+
+    $('#caseCount').textContent = `${cases.length} records`;
+  }
+
+  function renderTable() {
+    const query = state.search.trim().toLowerCase();
+    const filtered = cases.filter(item => {
+      if (state.stage !== 'All' && item.stage !== state.stage) return false;
+      if (state.type !== 'All' && item.visaType !== state.type) return false;
+      if (!query) return true;
+      return `${item.id} ${item.name} ${item.nationality} ${item.destination} ${item.visaType} ${item.stage} ${item.consultant} ${item.branch} ${item.nextStep}`.toLowerCase().includes(query);
+    });
+
+    $('#caseBody').innerHTML = filtered.length
+      ? filtered.map(caseRow).join('')
+      : '<tr><td colspan="8" class="app-table__empty">No cases match this search, stage and visa-type filter.</td></tr>';
+    $('#caseResult').textContent = `Showing ${filtered.length} of ${cases.length} cases`;
+
+    $$('#stageFilters .app-chip').forEach(chip => {
+      const active = chip.dataset.stage === state.stage;
+      chip.classList.toggle('is-active', active);
+      chip.setAttribute('aria-pressed', String(active));
+    });
+    const select = $('#visaFilter');
+    if (select.value !== state.type) select.value = state.type;
+  }
+
+  function renderPipeline() {
+    const active = cases.filter(isActive);
+    const counts = STAGES.map(stage => active.filter(item => item.stage === stage).length);
+    $('#pipelineChart').innerHTML = chartBars(counts, ['Enq', 'Cons', 'Docs', 'Lodge', 'Bio', 'Dec', 'Visa', 'Post']);
+    $('#pipelineRows').innerHTML = STAGES.map((stage, index) =>
+      `<div class="app-row"><span>${esc(stage)}</span><b class="num">${counts[index]}</b></div>`
+    ).join('');
+    $('#pipelineCount').textContent = `${active.length} active`;
+  }
+
+  function renderAppointments() {
+    const upcoming = cases
+      .filter(item => item.appointment && dayDiff(item.appointment.date) >= 0)
+      .sort((a, b) => a.appointment.date.localeCompare(b.appointment.date))
+      .slice(0, 5);
+    $('#appointmentCount').textContent = `${upcoming.length} upcoming`;
+    $('#appointmentList').innerHTML = upcoming.length
+      ? upcoming.map(item => `<div class="app-activity__item">
+          <span class="app-activity__dot"></span>
+          <div><b>${esc(item.name)}</b> · ${esc(item.destination)}<br>${esc(item.appointment.kind)} · ${esc(item.appointment.place)}<br><small class="app-hint">${esc(item.appointment.reminder)}</small></div>
+          <span class="app-activity__time">${fmtShort(item.appointment.date)}<br>${esc(item.appointment.time)}</span>
+        </div>`).join('')
+      : '<div class="app-activity__item"><span class="app-activity__dot"></span><div>No embassy appointments in the next 30 days.</div></div>';
+  }
+
+  function renderAudit() {
+    $('#auditCount').textContent = `${audit.length} entries`;
+    $('#auditList').innerHTML = audit.slice(0, 6).map(entry => `<div class="app-activity__item">
+      <span class="app-activity__dot"></span>
+      <div><b>${esc(entry.who)}</b> ${esc(entry.what)}<br><small class="app-hint">${esc(caseName(entry.caseId))} · ${esc(entry.caseId)}</small></div>
+      <span class="app-activity__time">${esc(entry.when)}</span>
+    </div>`).join('');
+  }
+
+  function render() {
+    renderKpis();
+    renderTable();
+    renderPipeline();
+    renderAppointments();
+    renderAudit();
+  }
+
+  /* ── actions ─────────────────────────────────────────────────────────── */
+  function advance(id) {
+    const item = byId(id);
+    if (!item || isFinal(item)) return;
+    const index = STAGES.indexOf(item.stage);
+    if (index < 0 || index >= STAGES.length - 1) return;
+    const previous = item.stage;
+    item.stage = STAGES[index + 1];
+    if (item.stage === 'Application lodged' && !item.lodged) item.lodged = isoOffset(0);
+    if (item.stage === 'Visa issued') item.outcome = 'Approved';
+    const next = STAGE_NEXT[item.stage];
+    if (next) {
+      item.nextStep = next[0];
+      item.nextDue = isoOffset(next[1]);
+    }
+    logAudit(item.id, `Stage changed — ${previous} → ${item.stage}`, item.consultant);
+    render();
+    toast(`${item.name} moved to ${item.stage} — sample workflow only.`, 'ok');
+  }
+
+  function exportCases() {
+    const rows = [['Case ID', 'Applicant', 'Nationality', 'Destination', 'Visa type', 'Stage', 'Outcome', 'Consultant', 'Branch', 'Documents ready', 'Documents total', 'Expiring in 30d', 'Expired', 'Total fee USD', 'Paid USD', 'Balance USD', 'Fee due', 'Lodged', 'Appointment date', 'Appointment type', 'Next step', 'Next step due']];
+    cases.forEach(item => {
+      const stats = docStats(item);
+      rows.push([
+        item.id, item.name, item.nationality, item.destination, item.visaType, item.stage,
+        item.outcome || 'Pending', item.consultant, item.branch,
+        stats.ready, stats.total, stats.expiring, stats.expired,
+        item.total, item.paid, balance(item), item.feeDue, item.lodged || '',
+        item.appointment ? item.appointment.date : '',
+        item.appointment ? `${item.appointment.kind} · ${item.appointment.place}` : '',
+        item.nextStep, item.nextDue
+      ]);
+    });
+    exportCSV('visa-cases.csv', rows);
+  }
+
+  /* ── detail drawer ───────────────────────────────────────────────────── */
+  function openCaseDrawer(id) {
+    const item = byId(id);
+    if (!item) return;
+    const stats = docStats(item);
+    const docs = item.docs.map((doc, index) => `<div class="app-row">
+        <span>${esc(doc.name)}<br><small class="app-hint">${doc.expiry ? `Expires ${fmtDate(doc.expiry)}` : 'No expiry date'}</small></span>
+        <span>${status(docLabel(doc), docTone(doc))}${doc.status === 'Ready' ? '' : ` <button class="app-btn app-btn--secondary app-btn--sm" type="button" data-doc="${index}">Mark ready</button>`}</span>
+      </div>`).join('');
+
+    const appointment = item.appointment ? `
+      <div class="app-row"><span>Type</span><b>${esc(item.appointment.kind)}</b></div>
+      <div class="app-row"><span>Place</span><b>${esc(item.appointment.place)}</b></div>
+      <div class="app-row"><span>Date</span><b>${fmtDate(item.appointment.date)} · ${esc(item.appointment.time)}</b></div>
+      <div class="app-row"><span>Reminder</span><b>${esc(item.appointment.reminder)}</b></div>
+      <div class="app-row"><span>Status</span><span>${status(appointmentBadge(item.appointment), 'info')} <button class="app-btn app-btn--secondary app-btn--sm" type="button" data-remind>Queue reminder</button></span></div>`
+      : '<div class="app-row"><span>Appointment</span><span>Not scheduled yet</span></div>';
+
+    const notes = item.notes.length ? `<div class="app-activity">${item.notes.map(note => `<div class="app-activity__item">
+        <span class="app-activity__dot"></span>
+        <div><b>${esc(note.who)}</b> · ${esc(note.visibility || 'Internal')}<br>${esc(note.text)}</div>
+        <span class="app-activity__time">${esc(note.when)}</span>
+      </div>`).join('')}</div>` : '<div class="app-note">No case notes yet.</div>';
+
+    const trail = audit.filter(entry => entry.caseId === item.id).slice(0, 4);
+    const trailMarkup = trail.length ? `<div class="app-activity">${trail.map(entry => `<div class="app-activity__item">
+        <span class="app-activity__dot"></span>
+        <div><b>${esc(entry.who)}</b> ${esc(entry.what)}</div>
+        <span class="app-activity__time">${esc(entry.when)}</span>
+      </div>`).join('')}</div>` : '<div class="app-note">No audit entries for this sample case yet.</div>';
+
+    const body = `
+      <div class="app-rows">
+        <div class="app-row"><span>Applicant</span><b>${esc(item.name)}</b></div>
+        <div class="app-row"><span>Nationality → destination</span><b>${esc(item.nationality)} → ${esc(item.destination)}</b></div>
+        <div class="app-row"><span>Visa type</span><b>${esc(item.visaType)}</b></div>
+        <div class="app-row"><span>Stage</span><span>${status(item.stage, STAGE_TONE[item.stage] || 'neutral')}${item.outcome === 'Refused' ? ` ${status('Refused', 'bad')}` : ''}</span></div>
+        <div class="app-row"><span>Consultant</span><b>${esc(item.consultant)}</b></div>
+        <div class="app-row"><span>Branch</span><b>${esc(item.branch)}</b></div>
+        <div class="app-row"><span>Opened</span><b>${fmtDate(item.opened)}</b></div>
+        <div class="app-row"><span>Lodged</span><b>${item.lodged ? fmtDate(item.lodged) : 'Not lodged'}</b></div>
+      </div>
+
+      <div class="app-panel__title">Document checklist <small>${stats.ready}/${stats.total} ready</small></div>
+      <div class="app-rows">${docs}</div>
+
+      <div class="app-panel__title">Fees &amp; instalments</div>
+      <div class="app-rows">
+        <div class="app-row"><span>Total fee</span><b>${money(item.total)}</b></div>
+        <div class="app-row"><span>Paid</span><b>${money(item.paid)}</b></div>
+        <div class="app-row"><span>Balance</span><b>${money(balance(item))}</b></div>
+        <div class="app-row"><span>Due date</span><b>${fmtDate(item.feeDue)}</b></div>
+        <div class="app-row"><span>Instalments</span><b>${item.paid >= item.total ? 'Settled in full' : item.paid > 0 ? 'Deposit received' : 'Not started'}</b></div>
+      </div>
+
+      <div class="app-panel__title">Appointment &amp; reminder</div>
+      <div class="app-rows">${appointment}</div>
+
+      <div class="app-panel__title">Case notes</div>
+      ${notes}
+      <form class="app-form" id="noteForm">
+        <div class="app-field app-field--full">
+          <label class="app-label" for="noteText">Add case note</label>
+          <textarea class="app-textarea" id="noteText" placeholder="Sample note — no real applicant information."></textarea>
+        </div>
+        <div class="app-field app-field--full">
+          <label class="app-label" for="noteVisibility">Visibility</label>
+          <select class="app-select" id="noteVisibility"><option>Internal</option><option>Client portal</option></select>
+        </div>
+      </form>
+
+      <div class="app-panel__title">Audit trail <small>who changed what</small></div>
+      ${trailMarkup}
+      <div class="app-note"><b>Sample only.</b> Fictional case file. Changes update this page's local state and audit trail — nothing is saved, filed or sent.</div>`;
+
+    openDrawer({
+      title: `${item.name} · ${item.id}`,
+      body,
+      footer: `<button class="app-btn app-btn--secondary" type="button" data-close>Close</button>
+               <button class="app-btn app-btn--secondary" type="button" data-pay="${item.id}">Record payment</button>
+               <button class="app-btn app-btn--primary" type="submit" form="noteForm">Add note</button>`,
+      onMount(overlay) {
+        $('[data-close]', overlay).addEventListener('click', closeDrawer);
+        $('[data-pay]', overlay).addEventListener('click', () => openPaymentDrawer(item.id));
+        const remind = $('[data-remind]', overlay);
+        if (remind) {
+          remind.addEventListener('click', () => {
+            logAudit(item.id, `Reminder queued — ${item.appointment.reminder}`, item.consultant);
+            render();
+            toast('Reminder queued — sample only, no message sent.', 'ok');
+          });
+        }
+        $$('[data-doc]', overlay).forEach(button => {
+          button.addEventListener('click', () => {
+            const doc = item.docs[Number(button.dataset.doc)];
+            if (!doc || doc.status === 'Ready') return;
+            doc.status = 'Ready';
+            logAudit(item.id, `${doc.name} marked ready`, item.consultant);
+            openCaseDrawer(item.id);
+            render();
+            toast(`${doc.name} marked ready — sample only.`, 'ok');
+          });
+        });
+        $('#noteForm', overlay).addEventListener('submit', event => {
+          event.preventDefault();
+          const text = $('#noteText', overlay).value.trim();
+          if (!text) {
+            toast('Write a note before saving.', 'warn');
+            $('#noteText', overlay).focus();
+            return;
+          }
+          const visibility = $('#noteVisibility', overlay).value;
+          item.notes.unshift({ who: item.consultant, text, when: 'just now', visibility });
+          logAudit(item.id, `Case note added (${visibility.toLowerCase()})`, item.consultant);
+          openCaseDrawer(item.id);
+          render();
+          toast('Case note added — sample only.', 'ok');
+        });
+      }
+    });
+  }
+
+  /* ── payment drawer ──────────────────────────────────────────────────── */
+  function openPaymentDrawer(id) {
+    const item = byId(id);
+    if (!item) return;
+    const outstanding = balance(item);
+    const body = `
+      <div class="app-rows">
+        <div class="app-row"><span>Total fee</span><b>${money(item.total)}</b></div>
+        <div class="app-row"><span>Paid to date</span><b>${money(item.paid)}</b></div>
+        <div class="app-row"><span>Balance</span><b>${money(outstanding)}</b></div>
+        <div class="app-row"><span>Due date</span><b>${fmtDate(item.feeDue)}</b></div>
+      </div>
+      <form class="app-form" id="payForm">
+        <div class="app-field app-field--full">
+          <label class="app-label" for="pAmount">Amount (USD)</label>
+          <input class="app-input" id="pAmount" type="number" min="1" step="10" value="${outstanding}">
+        </div>
+        <div class="app-field">
+          <label class="app-label" for="pMethod">Method</label>
+          <select class="app-select" id="pMethod"><option>Bank transfer</option><option>Card</option><option>Cash</option><option>Instalment plan</option></select>
+        </div>
+        <div class="app-field">
+          <label class="app-label" for="pDate">Payment date</label>
+          <input class="app-input" id="pDate" type="date" value="${isoOffset(0)}">
+        </div>
+        <div class="app-field app-field--full">
+          <label class="app-label" for="pRef">Sample reference</label>
+          <input class="app-input" id="pRef" type="text" placeholder="e.g. SAMPLE-0001" autocomplete="off">
+        </div>
+      </form>
+      <div class="app-note"><b>Sample only.</b> Recording a payment updates paid, balance, KPIs and the audit trail. No money moves and no receipt is issued.</div>`;
+
+    openDrawer({
+      title: `Record payment · ${item.name}`,
+      body,
+      footer: `<button class="app-btn app-btn--secondary" type="button" data-close>Cancel</button>
+               <button class="app-btn app-btn--primary" type="submit" form="payForm">Record payment</button>`,
+      onMount(overlay) {
+        $('[data-close]', overlay).addEventListener('click', closeDrawer);
+        $('#payForm', overlay).addEventListener('submit', event => {
+          event.preventDefault();
+          const amount = Number($('#pAmount', overlay).value);
+          if (!(amount > 0)) {
+            toast('Enter a payment amount above zero.', 'warn');
+            $('#pAmount', overlay).focus();
+            return;
+          }
+          if (amount > outstanding) {
+            toast(`Amount is above the ${money(outstanding)} balance.`, 'warn');
+            $('#pAmount', overlay).focus();
+            return;
+          }
+          const method = $('#pMethod', overlay).value;
+          item.paid += amount;
+          logAudit(item.id, `Payment recorded — ${money(amount)} via ${method}`, item.consultant);
+          item.notes.unshift({ who: item.consultant, text: `Payment of ${money(amount)} recorded (${method}) — sample entry.`, when: 'just now', visibility: 'Internal' });
+          openCaseDrawer(item.id);
+          render();
+          toast(`Payment recorded — ${money(amount)} — sample only.`, 'ok');
+        });
+      }
+    });
+  }
+
+  /* ── new case drawer ─────────────────────────────────────────────────── */
+  function openNewCase() {
+    const body = `
+      <form class="app-form" id="newCaseForm">
+        <div class="app-field app-field--full">
+          <label class="app-label" for="nName">Applicant name</label>
+          <input class="app-input" id="nName" type="text" placeholder="Fictional name only" autocomplete="off">
+        </div>
+        <div class="app-field">
+          <label class="app-label" for="nNat">Nationality</label>
+          <input class="app-input" id="nNat" type="text" placeholder="e.g. Filipino" autocomplete="off">
+        </div>
+        <div class="app-field">
+          <label class="app-label" for="nDest">Destination</label>
+          <select class="app-select" id="nDest">${DESTINATIONS.map(destination => `<option value="${destination}">${destination}</option>`).join('')}</select>
+        </div>
+        <div class="app-field">
+          <label class="app-label" for="nType">Visa type</label>
+          <select class="app-select" id="nType">${VISA_TYPES.map(type => `<option value="${type}">${type}</option>`).join('')}</select>
+        </div>
+        <div class="app-field">
+          <label class="app-label" for="nConsultant">Consultant</label>
+          <select class="app-select" id="nConsultant">${CONSULTANTS.map(name => `<option value="${esc(name)}">${esc(name)}</option>`).join('')}</select>
+        </div>
+        <div class="app-field">
+          <label class="app-label" for="nBranch">Branch</label>
+          <select class="app-select" id="nBranch">${BRANCHES.map(branch => `<option value="${esc(branch)}">${esc(branch)}</option>`).join('')}</select>
+        </div>
+        <div class="app-field">
+          <label class="app-label" for="nFee">Total fee (USD)</label>
+          <input class="app-input" id="nFee" type="number" min="0" step="50" value="1800">
+        </div>
+        <div class="app-field">
+          <label class="app-label" for="nDue">Balance due</label>
+          <input class="app-input" id="nDue" type="date" value="${isoOffset(14)}">
+        </div>
+      </form>
+      <div class="app-note"><b>Sample only.</b> Creating a case adds it to this page's local state with a fresh checklist. Nothing is filed with any authority.</div>`;
+
+    openDrawer({
+      title: 'New case',
+      body,
+      footer: `<button class="app-btn app-btn--secondary" type="button" data-close>Cancel</button>
+               <button class="app-btn app-btn--primary" type="submit" form="newCaseForm">Create case</button>`,
+      onMount(overlay) {
+        $('[data-close]', overlay).addEventListener('click', closeDrawer);
+        $('#newCaseForm', overlay).addEventListener('submit', event => {
+          event.preventDefault();
+          const name = $('#nName', overlay).value.trim();
+          const nationality = $('#nNat', overlay).value.trim();
+          const fee = Number($('#nFee', overlay).value);
+          if (!name) {
+            toast('Add an applicant name — fictional sample only.', 'warn');
+            $('#nName', overlay).focus();
+            return;
+          }
+          if (!(fee > 0)) {
+            toast('Add a total fee above zero.', 'warn');
+            $('#nFee', overlay).focus();
+            return;
+          }
+          const consultant = $('#nConsultant', overlay).value;
+          const newCase = {
+            id: `VC-${nextId++}`,
+            name,
+            nationality: nationality || 'Not recorded',
+            destination: $('#nDest', overlay).value,
+            visaType: $('#nType', overlay).value,
+            consultant,
+            branch: $('#nBranch', overlay).value,
+            stage: 'Enquiry',
+            opened: isoOffset(0),
+            lodged: null,
+            outcome: null,
+            docs: docsFor(['Pending', 'Pending', 'Pending', 'Pending', 'Pending', 'Pending', 'Pending'], [900, null, 30, 60, 240, 90, 60]),
+            total: fee,
+            paid: 0,
+            feeDue: $('#nDue', overlay).value || isoOffset(14),
+            appointment: null,
+            nextStep: 'Eligibility call',
+            nextDue: isoOffset(3),
+            notes: [{ who: consultant, text: 'Case created from the demo new-case form — sample only.', when: 'just now', visibility: 'Internal' }]
+          };
+          cases.unshift(newCase);
+          logAudit(newCase.id, 'Case created — Enquiry', consultant);
+          closeDrawer();
+          render();
+          toast(`Case created — ${name} · ${money(fee)} — sample only.`, 'ok');
+        });
+      }
+    });
+  }
+
+  /* ── wiring ──────────────────────────────────────────────────────────── */
+  function wire() {
+    $('#caseSearch').addEventListener('input', event => {
+      state.search = event.target.value;
+      renderTable();
+    });
+    $('#visaFilter').addEventListener('change', event => {
+      state.type = event.target.value;
+      renderTable();
+    });
+    $('#stageFilters').addEventListener('click', event => {
+      const chip = event.target.closest('[data-stage]');
+      if (!chip) return;
+      state.stage = chip.dataset.stage;
+      renderTable();
+    });
+    $('[data-new-case]').addEventListener('click', openNewCase);
+    $('[data-export-visa]').addEventListener('click', exportCases);
+    $('#caseBody').addEventListener('click', event => {
+      const openBtn = event.target.closest('[data-open]');
+      if (openBtn) {
+        openCaseDrawer(openBtn.dataset.open);
+        return;
+      }
+      const advanceBtn = event.target.closest('[data-advance]');
+      if (advanceBtn) advance(advanceBtn.dataset.advance);
+    });
+  }
+
+  function boot() {
+    App = window.EBSApp;
+    if (!App) return;
+    ({ money, status, toast, openDrawer, closeDrawer, chartBars, exportCSV, esc } = App);
+    wire();
+    render();
+    App.onCurrency(render);
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot, { once: true });
+  else boot();
+})();
+</script>
+</body>
+</html>
