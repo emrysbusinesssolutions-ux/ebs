@@ -4,4 +4,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://emrysbusiness.com/sitemap.xml
+Sitemap: https://emrysbusinesssolutions-ux.github.io/ebs/sitemap.xml

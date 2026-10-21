@@ -1,7 +1,7 @@
 {
   "name": "Emrys Business Solutions",
   "short_name": "EBS",
-  "start_url": "/",
+  "start_url": "/ebs/",
   "display": "standalone",
   "background_color": "#0a1024",
   "theme_color": "#0a1024",
@@ -16,5 +16,6 @@
       "sizes": "180x180",
       "type": "image/png"
     }
-  ]
+  ],
+  "scope": "/ebs/"
 }
