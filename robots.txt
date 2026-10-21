@@ -1,0 +1,7 @@
+# Emrys Business Solutions — robots.txt
+# This site is public. Nothing is disallowed.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://emrysbusinesssolutions-ux.github.io/ebs/sitemap.xml

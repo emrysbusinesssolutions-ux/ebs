@@ -1,0 +1,21 @@
+{
+  "name": "Emrys Business Solutions",
+  "short_name": "EBS",
+  "start_url": "/ebs/",
+  "display": "standalone",
+  "background_color": "#0a1024",
+  "theme_color": "#0a1024",
+  "icons": [
+    {
+      "src": "assets/img/favicon-64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "scope": "/ebs/"
+}
