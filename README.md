@@ -1,7 +1,9 @@
 # EBS website
 
 Static website for **Emrys Business Solutions** — 12 marketing pages, the enterprise demo hub,
-and 10 interactive business software demos.
+and 11 interactive business software demos (including visa & immigration case management).
+
+Positioning: international-first, remote-only delivery (no on-site installation or travel).
 
 - Base currency: USD; display switch: MMK / THB / CNY
 - Demo data is illustrative
