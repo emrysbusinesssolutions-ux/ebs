@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HR &amp; payroll — EBS Enterprise Demo</title>
+<meta name="description" content="Interactive HR demo: headcount, attendance, leave approvals, department filters and payroll run summary — sample data, USD base with local currency display.">
+<link rel="canonical" href="https://emrysbusinesssolutions-ux.github.io/ebs/demos/hr.html">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a1024">
+<meta property="og:image" content="https://emrysbusinesssolutions-ux.github.io/ebs/assets/img/og.jpg">
+<link rel="icon" href="../assets/img/favicon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="preload" href="../assets/fonts/inter-tight-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/instrument-sans-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/style.css?v=20261021i">
+<link rel="stylesheet" href="../assets/css/app.css?v=20261021i">
+</head>
+<body class="app-body" data-module="hr">
+<header class="app-topbar">
+  <div class="app-topbar__left">
+    <a class="app-brand" href="../index.html" aria-label="Emrys Business Solutions home">
+      <img src="../assets/img/ebs-logo-circle-96.png" alt="" width="28" height="28">
+      <span>Emrys <b>Demo</b></span>
+    </a>
+    <span class="app-env">Sample data · no live records</span>
+  </div>
+  <div class="app-topbar__right">
+    <label class="app-currency"><span>Currency</span><select data-currency-select aria-label="Display currency"></select></label>
+    <a class="app-topbar__link" href="../demo.html">All demos</a>
+    <a class="app-topbar__link" href="../index.html">Website</a>
+    <a class="app-btn app-btn--primary" href="../contact.html">Book a demo</a>
+    <button class="app-menu" type="button" data-app-menu aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="app-shell">
+  <aside class="app-side" id="appSide">
+    <div class="app-side__group"><span>Operations</span>
+      <a class="app-nav" data-nav="pos" href="pos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M7 20h10M12 16v4"/></svg>POS &amp; checkout</a>
+      <a class="app-nav" data-nav="inventory" href="inventory.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></svg>Inventory</a>
+      <a class="app-nav" data-nav="purchasing" href="purchasing.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M6 6v14h12V6M9 10h6"/></svg>Purchasing</a>
+      <a class="app-nav" data-nav="warehouse" href="warehouse.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13M3 21h18M9 21v-6h6v6"/></svg>Warehouse</a>
+    </div>
+    <div class="app-side__group"><span>People &amp; finance</span>
+      <a class="app-nav" data-nav="crm" href="crm.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>CRM</a>
+      <a class="app-nav" data-nav="hr" href="hr.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg>HR &amp; payroll</a>
+      <a class="app-nav" data-nav="accounting" href="accounting.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3h16v18H4zM8 7h8M8 11h8M8 15h5"/></svg>Accounting</a>
+      <a class="app-nav" data-nav="projects" href="projects.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4zM8 8h8M8 12h5"/></svg>Projects</a>
+    </div>
+    <div class="app-side__group"><span>Growth</span>
+      <a class="app-nav" data-nav="analytics" href="analytics.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15v-4M12 15V7M17 15v-6"/></svg>Analytics</a>
+      <a class="app-nav" data-nav="ecommerce" href="ecommerce.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6 5 3H2"/></svg>E-commerce</a>
+    </div>
+    <div class="app-side__foot">
+      <div class="app-side__note"><b>Sample workspace.</b><br>USD base · switch display currency. No live records or payments.</div>
+      <a href="../demo.html">All demos</a>
+      <a href="../index.html">Back to website</a>
+    </div>
+  </aside>
+
+  <main class="app-main">
+    <div class="app-head">
+      <div>
+        <p class="app-eyebrow">People &amp; finance · Module 08</p>
+        <h1>HR &amp; payroll</h1>
+        <p class="app-sub">Attendance, leave and payroll in one workspace. Approve requests, check department cover and run a payroll summary on illustrative data — no live records.</p>
+      </div>
+      <div class="app-actions">
+        <button class="app-btn app-btn--secondary" type="button" data-export-csv>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 19h16"/></svg>
+          Export CSV
+        </button>
+        <button class="app-btn app-btn--primary" type="button" data-payroll>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg>
+          Run payroll
+        </button>
+      </div>
+    </div>
+
+    <section class="app-kpis" aria-label="HR summary">
+      <article class="app-kpi">
+        <div class="app-kpi__label">Headcount</div>
+        <div class="app-kpi__value" data-kpi="headcount">48</div>
+        <div class="app-kpi__meta"><span class="app-delta">+3</span> vs last quarter</div>
+      </article>
+      <article class="app-kpi">
+        <div class="app-kpi__label">Present today</div>
+        <div class="app-kpi__value" data-kpi="present">42</div>
+        <div class="app-kpi__meta" data-kpi-meta="present">36 office · 5 remote · 1 late</div>
+      </article>
+      <article class="app-kpi">
+        <div class="app-kpi__label">Pending leave</div>
+        <div class="app-kpi__value" data-kpi="pending">4</div>
+        <div class="app-kpi__meta" data-kpi-meta="pending">Awaiting approval</div>
+      </article>
+      <article class="app-kpi">
+        <div class="app-kpi__label">Payroll cost · month</div>
+        <div class="app-kpi__value" data-kpi="payroll">$128.4K</div>
+        <div class="app-kpi__meta" data-kpi-meta="payroll">Net $109,750 · pay date 31 Oct</div>
+      </article>
+    </section>
+
+    <div class="app-grid">
+      <section class="app-panel" aria-labelledby="rosterTitle">
+        <div class="app-panel__head">
+          <h2 class="app-panel__title" id="rosterTitle">Employees <small data-roster-count>14 roster entries</small></h2>
+          <span class="app-badge app-badge--neutral">Sample roster</span>
+        </div>
+        <div class="app-panel__body">
+          <div class="app-toolbar">
+            <label class="app-search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+              <input type="search" data-search placeholder="Search name, role or employee ID" aria-label="Search employees">
+            </label>
+            <select class="app-select" data-dept aria-label="Filter by department">
+              <option value="all">All departments</option>
+              <option value="Engineering">Engineering</option>
+              <option value="Sales">Sales</option>
+              <option value="Operations">Operations</option>
+              <option value="Finance">Finance</option>
+              <option value="Support">Support</option>
+            </select>
+            <div class="app-chip-row" data-att-chips role="group" aria-label="Filter by attendance">
+              <button class="app-chip is-active" type="button" data-att="all">All</button>
+              <button class="app-chip" type="button" data-att="present">Present</button>
+              <button class="app-chip" type="button" data-att="remote">Remote</button>
+              <button class="app-chip" type="button" data-att="leave">On leave</button>
+              <button class="app-chip" type="button" data-att="pending">Pending leave</button>
+            </div>
+          </div>
+          <div class="app-table-wrap">
+            <table class="app-table" id="hrTable">
+              <thead>
+                <tr>
+                  <th scope="col">Employee</th>
+                  <th scope="col">Department</th>
+                  <th scope="col">Role</th>
+                  <th scope="col">Attendance</th>
+                  <th scope="col" class="num">Leave</th>
+                  <th scope="col" class="num">Salary</th>
+                  <th scope="col" class="actions">Request</th>
+                </tr>
+              </thead>
+              <tbody data-rows></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="app-panel__foot">
+          <span data-table-foot>Showing 14 of 14 roster entries</span>
+          <span>Sample employees · illustrative amounts</span>
+        </div>
+      </section>
+
+      <div class="app-grid app-grid--wide">
+        <section class="app-panel" aria-labelledby="attendanceTitle">
+          <div class="app-panel__head">
+            <h2 class="app-panel__title" id="attendanceTitle">Attendance today <small>of 48</small></h2>
+            <span class="app-badge app-badge--ok">Synced 09:12</span>
+          </div>
+          <div class="app-panel__body">
+            <div class="app-rows" data-attendance></div>
+            <p class="app-note"><b>Sample count.</b> Roster entries below are a subset of the full workspace.</p>
+          </div>
+        </section>
+
+        <section class="app-panel" aria-labelledby="leaveTitle">
+          <div class="app-panel__head">
+            <h2 class="app-panel__title" id="leaveTitle">Upcoming leave</h2>
+            <span class="app-badge app-badge--info" data-upcoming-count>2 approved</span>
+          </div>
+          <div class="app-panel__body">
+            <div class="app-activity" data-upcoming></div>
+          </div>
+        </section>
+
+        <section class="app-panel" aria-labelledby="deptChartTitle">
+          <div class="app-panel__head">
+            <h2 class="app-panel__title" id="deptChartTitle">Headcount by department</h2>
+            <span class="app-badge app-badge--neutral">48 FTE</span>
+          </div>
+          <div class="app-panel__body">
+            <div data-dept-chart></div>
+            <p class="app-note">Full-time equivalent headcount, sample data.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="app-grid app-grid--2">
+      <section class="app-panel" aria-labelledby="activityTitle">
+        <div class="app-panel__head">
+          <h2 class="app-panel__title" id="activityTitle">Recent HR activity</h2>
+          <span class="app-badge app-badge--info">Today</span>
+        </div>
+        <div class="app-panel__body">
+          <div class="app-activity" data-activity></div>
+        </div>
+      </section>
+
+      <section class="app-panel" aria-labelledby="payrollTitle">
+        <div class="app-panel__head">
+          <h2 class="app-panel__title" id="payrollTitle">Payroll snapshot</h2>
+          <button class="app-btn app-btn--secondary app-btn--sm" type="button" data-payroll>Open summary</button>
+        </div>
+        <div class="app-panel__body">
+          <div class="app-rows" data-payroll-rows></div>
+          <p class="app-note"><b>Sample payroll.</b> No bank files are generated and no payments are processed.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<script src="../assets/js/currency.js?v=20261021i" defer></script>
+<script src="../assets/js/app.js?v=20261021i" defer></script>
+<script src="../assets/js/main.js?v=20261021i" defer></script>
+<script src="../assets/js/demos/hr.js?v=20261021i" defer></script>
+</body>
+</html>

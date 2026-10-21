@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Book a demo — Emrys Business Solutions</title>
+<meta name="description" content="Contact Emrys Business Solutions by enquiry form, Telegram or email. Tell us what your business runs on today, and a person replies within one business day.">
+<link rel="canonical" href="https://emrysbusinesssolutions-ux.github.io/ebs/contact.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Emrys Business Solutions">
+<meta property="og:title" content="Contact — Book a demo — Emrys Business Solutions">
+<meta property="og:description" content="Contact Emrys Business Solutions by enquiry form, Telegram or email. Tell us what your business runs on today, and a person replies within one business day.">
+<meta property="og:url" content="https://emrysbusinesssolutions-ux.github.io/ebs/contact.html">
+<meta property="og:image" content="https://emrysbusinesssolutions-ux.github.io/ebs/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a1024">
+<link rel="icon" href="assets/img/favicon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preload" href="assets/fonts/inter-tight-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/instrument-sans-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css?v=20261021i">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Emrys Business Solutions — home">
+      <span class="brand-mark" aria-hidden="true"><img src="assets/img/ebs-logo-circle-96.png" alt="" width="40" height="40" decoding="async"></span>
+      <span class="brand-text"><span class="brand-name">Emrys</span><span class="brand-sub">Business Solutions</span></span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="solutions.html">Solutions</a>
+      <a href="industries.html">Industries</a>
+      <a href="case-studies.html">Case studies</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="security.html">Security</a>
+      <a href="about.html">Company</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn--ghost header-link" href="demo.html">Live demos</a>
+      <label class="currency-picker"><span class="sr-only">Display currency</span><select data-currency-select aria-label="Display currency"></select></label>
+      <a class="btn btn--primary" href="contact.html">Book a demo</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <nav class="mobile-menu__nav" aria-label="Mobile">
+      <a href="solutions.html">Solutions</a>
+      <a href="industries.html">Industries</a>
+      <a href="case-studies.html">Case studies</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="security.html">Security</a>
+      <a href="about.html">Company</a>
+      <a href="demo.html">Live demos</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="mobile-menu__actions">
+      <label class="currency-picker currency-picker--block"><span>Display currency</span><select data-currency-select aria-label="Display currency"></select></label>
+      <a class="btn btn--primary btn--block" href="contact.html">Book a demo</a>
+      <a class="btn btn--secondary btn--block" href="https://t.me/emrysbsolutions_bot" target="_blank" rel="noopener">Message us on Telegram</a>
+    </div>
+    <p class="mobile-menu__meta">Yangon · Mandalay · Naypyidaw<br>Support in English, မြန်မာ, 中文 and ไทย</p>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero__meta">
+        <span>Contact</span>
+        <span>Reply within one business day</span>
+      </div>
+      <h1>Tell us what your business runs on.</h1>
+      <p class="lead">A short conversation is usually enough to tell whether EBS fits. Send an enquiry, message us on Telegram, or email — whichever is easiest. No technical preparation needed.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="split split--wide-left">
+
+        <div class="split__media">
+          <div class="card card--flat">
+            <h2 class="card__title">Send an enquiry</h2>
+            <p class="small muted">Fields marked <span class="form-required">*</span> are needed so we can reply.</p>
+            <form class="form" id="contactForm" novalidate>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="name">Your name <span class="form-required">*</span></label>
+                  <input id="name" name="name" type="text" autocomplete="name" required>
+                </div>
+                <div class="field">
+                  <label for="business">Business name <span class="opt">(optional)</span></label>
+                  <input id="business" name="business" type="text" autocomplete="organization">
+                </div>
+                <div class="field">
+                  <label for="email">Email <span class="form-required">*</span></label>
+                  <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
+                </div>
+                <div class="field">
+                  <label for="phone">Phone / Telegram <span class="opt">(optional)</span></label>
+                  <input id="phone" name="phone" type="text" autocomplete="tel" placeholder="@username or number">
+                </div>
+              </div>
+              <div class="field">
+                <label for="plan">Plan you are considering</label>
+                <select id="plan" name="plan">
+                  <option value="">Not sure yet</option>
+                  <option value="Basic">Basic</option>
+                  <option value="Standard">Standard</option>
+                  <option value="Premium">Premium</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="message">What does your business run on today? <span class="form-required">*</span></label>
+                <textarea id="message" name="message" required placeholder="e.g. retail shop with two branches, sales written on paper, stock counted at month end"></textarea>
+              </div>
+              <div class="btn-row">
+                <button class="btn btn--primary" type="submit">Send enquiry</button>
+                <a class="btn btn--secondary" href="https://t.me/emrysbsolutions_bot" target="_blank" rel="noopener">Message on Telegram</a>
+              </div>
+              <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+              <button class="btn btn--secondary btn--sm" id="copyDraft" type="button" hidden>Copy draft</button>
+              <p class="form-note">This form does not post to a server. It opens a pre-filled email in your own mail app; nothing is sent until you press send there. If your mail app does not open, use the copy button and paste the draft into Telegram. Details are covered by our <a href="privacy.html">privacy policy</a>.</p>
+            </form>
+          </div>
+        </div>
+
+        <div class="split__copy">
+          <p class="eyebrow">Direct contact</p>
+          <h2>Talk to the people who build the system</h2>
+          <p class="lead">No call centre and no sales script. Enquiries go to the people who scope, build and support the systems.</p>
+
+          <div class="contact-method">
+            <span class="contact-method__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+            </span>
+            <div>
+              <p class="contact-method__label">Telegram</p>
+              <p class="contact-method__value"><a href="https://t.me/emrysbsolutions_bot" target="_blank" rel="noopener">@emrysbsolutions_bot</a></p>
+              <p class="contact-method__note">Usually the fastest route. Message the bot and a person replies in the same chat.</p>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <span class="contact-method__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </span>
+            <div>
+              <p class="contact-method__label">Email</p>
+              <p class="contact-method__value"><a href="mailto:minkhantpaiii@gmail.com">minkhantpaiii@gmail.com</a></p>
+              <p class="contact-method__note">Best for longer briefs, documents and anything you want in writing.</p>
+              <button class="btn btn--secondary btn--sm" type="button" data-copy="minkhantpaiii@gmail.com">Copy address</button>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <span class="contact-method__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <div>
+              <p class="contact-method__label">Service area</p>
+              <p class="contact-method__value">Yangon · Mandalay · Naypyidaw</p>
+              <p class="contact-method__note">On-site visits by arrangement. Remote setup and support across Myanmar.</p>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <span class="contact-method__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+            </span>
+            <div>
+              <p class="contact-method__label">Languages</p>
+              <p class="contact-method__value">English, Burmese, Chinese and Thai</p>
+              <p class="contact-method__note">The support team works in these languages; written documentation is in English.</p>
+            </div>
+          </div>
+
+          <p class="eyebrow mt-24">What happens next</p>
+          <div class="timeline">
+            <div class="timeline__item">
+              <p class="timeline__year">Step 1 — Reply</p>
+              <p class="timeline__title">We reply within one business day</p>
+              <p class="timeline__text">A person reads your message and replies by email or Telegram with a few clarifying questions.</p>
+            </div>
+            <div class="timeline__item">
+              <p class="timeline__year">Step 2 — Discovery call</p>
+              <p class="timeline__title">A 30-minute conversation</p>
+              <p class="timeline__text">We look at how you sell, buy and keep records today. No preparation, slides or technical knowledge required.</p>
+            </div>
+            <div class="timeline__item">
+              <p class="timeline__year">Step 3 — Written scope</p>
+              <p class="timeline__title">Scope and a range-based quote</p>
+              <p class="timeline__text">You receive the modules, rollout order and indicative pricing in writing. A Service Agreement follows if you decide to go ahead.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Before you write</p>
+        <h2>Questions people ask before the first call</h2>
+        <p class="lead">Short answers to the things that come up most often. If yours is not here, ask it in the form — that is what it is for.</p>
+      </div>
+      <div class="faq">
+        <details class="faq__item">
+          <summary class="faq__q">Do you work outside Yangon, Mandalay and Naypyidaw?</summary>
+          <div class="faq__a"><p>Yes. Remote setup and support are available across Myanmar. On-site visits to those three cities can be arranged. Tell us where you are in the form and we will confirm what is practical.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">What should I prepare before the first call?</summary>
+          <div class="faq__a"><p>Nothing formal. A rough idea of daily sales, the products or units you sell, how you record stock and who needs access is enough. If you already use a spreadsheet or notebook, keep it nearby.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">Does the enquiry form store my details on a server?</summary>
+          <div class="faq__a"><p>No. The site has no server-side form handling. Pressing send builds a pre-filled email in your own mail app, and nothing leaves your device until you send it. If your mail app does not open, copy the draft and paste it into Telegram. The <a href="privacy.html">privacy policy</a> explains this in full.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">What does it cost?</summary>
+          <div class="faq__a"><p>Published plans are indicative ranges, not quotes. The <a href="pricing.html">pricing page</a> lists what each plan includes and the support allowance. The final quotation follows the discovery call and a written scope.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">Where does our business data live?</summary>
+          <div class="faq__a"><p>For deployed systems, on your own premises, on a server you control. The product is offline-first, so the shop keeps working if the internet drops. Data ownership, backups and access are covered on the <a href="security.html">security page</a>.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="callout max-760">
+        <h3 class="h4">Not ready to write yet?</h3>
+        <p>The <a href="pricing.html">pricing page</a> explains the plans and ranges, and the <a href="security.html">security overview</a> covers data ownership, backups and support. When you are ready, the form above is the fastest route — or send a short message on Telegram.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand brand--footer" href="index.html" aria-label="Emrys Business Solutions — home">
+        <span class="brand-mark" aria-hidden="true"><img src="assets/img/ebs-logo-circle-96.png" alt="" width="40" height="40" decoding="async"></span>
+        <span class="brand-text"><span class="brand-name">Emrys</span><span class="brand-sub">Business Solutions</span></span>
+      </a>
+      <p>Business systems for Myanmar companies — POS, inventory, CRM and custom web apps. On-premise, offline-first, supported directly by the people who build them.</p>
+      <a class="footer-contact" href="https://t.me/emrysbsolutions_bot" target="_blank" rel="noopener">Telegram — @emrysbsolutions_bot</a>
+      <a class="footer-contact" href="mailto:minkhantpaiii@gmail.com">minkhantpaiii@gmail.com</a>
+      <p class="footer-langs">Support in English · မြန်မာ · 中文 · ไทย</p>
+    </div>
+    <div class="footer-col">
+      <h2>Solutions</h2>
+      <a href="solutions.html#pos">POS &amp; checkout</a>
+      <a href="solutions.html#inventory">Inventory &amp; purchasing</a>
+      <a href="solutions.html#crm">CRM &amp; receivables</a>
+      <a href="solutions.html#analytics">Analytics &amp; reports</a>
+      <a href="solutions.html#web">Custom web apps</a>
+      <a href="solutions.html#automation">Automation</a>
+    </div>
+    <div class="footer-col">
+      <h2>Company</h2>
+      <a href="about.html">About EBS</a>
+      <a href="case-studies.html">Case studies</a>
+      <a href="demo.html">Live demos</a>
+      <a href="industries.html">Industries</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h2>Trust</h2>
+      <a href="security.html">Security overview</a>
+      <a href="security.html#sla">Support &amp; SLA</a>
+      <a href="privacy.html">Privacy policy</a>
+      <a href="terms.html">Terms of service</a>
+      <a href="pricing.html#faq">Pricing FAQ</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© <span data-year>2026</span> Emrys Business Solutions. All rights reserved.</p>
+    <p>Built and supported in Myanmar. Interfaces shown are illustrative.</p>
+  </div>
+</footer>
+
+<script src="assets/js/currency.js?v=20261021i" defer></script>
+<script src="assets/js/main.js?v=20261021i" defer></script>
+</body>
+</html>

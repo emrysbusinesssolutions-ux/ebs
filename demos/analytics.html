@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analytics &amp; BI — EBS Enterprise Demo</title>
+<meta name="description" content="Interactive analytics and BI demo: revenue KPIs, period chips, category mix, product trends and CSV export — sample data, USD base with local currency display.">
+<link rel="canonical" href="https://emrysbusinesssolutions-ux.github.io/ebs/demos/analytics.html">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a1024">
+<meta property="og:image" content="https://emrysbusinesssolutions-ux.github.io/ebs/assets/img/og.jpg">
+<link rel="icon" href="../assets/img/favicon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="preload" href="../assets/fonts/inter-tight-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/instrument-sans-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/style.css?v=20261021i">
+<link rel="stylesheet" href="../assets/css/app.css?v=20261021i">
+</head>
+<body class="app-body" data-module="analytics">
+<header class="app-topbar">
+  <div class="app-topbar__left">
+    <a class="app-brand" href="../index.html" aria-label="Emrys Business Solutions home">
+      <img src="../assets/img/ebs-logo-circle-96.png" alt="" width="28" height="28">
+      <span>Emrys <b>Demo</b></span>
+    </a>
+    <span class="app-env">Sample data · no live records</span>
+  </div>
+  <div class="app-topbar__right">
+    <label class="app-currency"><span>Currency</span><select data-currency-select aria-label="Display currency"></select></label>
+    <a class="app-topbar__link" href="../demo.html">All demos</a>
+    <a class="app-topbar__link" href="../index.html">Website</a>
+    <a class="app-btn app-btn--primary" href="../contact.html">Book a demo</a>
+    <button class="app-menu" type="button" data-app-menu aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="app-shell">
+  <aside class="app-side" id="appSide">
+    <div class="app-side__group"><span>Operations</span>
+      <a class="app-nav" data-nav="pos" href="pos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M7 20h10M12 16v4"/></svg>POS &amp; checkout</a>
+      <a class="app-nav" data-nav="inventory" href="inventory.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></svg>Inventory</a>
+      <a class="app-nav" data-nav="purchasing" href="purchasing.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M6 6v14h12V6M9 10h6"/></svg>Purchasing</a>
+      <a class="app-nav" data-nav="warehouse" href="warehouse.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13M3 21h18M9 21v-6h6v6"/></svg>Warehouse</a>
+    </div>
+    <div class="app-side__group"><span>People &amp; finance</span>
+      <a class="app-nav" data-nav="crm" href="crm.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>CRM</a>
+      <a class="app-nav" data-nav="hr" href="hr.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg>HR &amp; payroll</a>
+      <a class="app-nav" data-nav="accounting" href="accounting.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3h16v18H4zM8 7h8M8 11h8M8 15h5"/></svg>Accounting</a>
+      <a class="app-nav" data-nav="projects" href="projects.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4zM8 8h8M8 12h5"/></svg>Projects</a>
+    </div>
+    <div class="app-side__group"><span>Growth</span>
+      <a class="app-nav" data-nav="analytics" href="analytics.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15v-4M12 15V7M17 15v-6"/></svg>Analytics</a>
+      <a class="app-nav" data-nav="ecommerce" href="ecommerce.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6 5 3H2"/></svg>E-commerce</a>
+    </div>
+    <div class="app-side__foot">
+      <div class="app-side__note"><b>Sample workspace.</b><br>USD base · switch display currency. No live records or payments.</div>
+      <a href="../demo.html">All demos</a>
+      <a href="../index.html">Back to website</a>
+    </div>
+  </aside>
+
+  <main class="app-main">
+    <div class="app-head">
+      <div>
+        <p class="app-eyebrow">Growth · Module 10</p>
+        <h1>Analytics &amp; BI</h1>
+        <p class="app-sub">Revenue, margin and product performance across the storefront. Switch the reporting period to see how the sample dataset changes — display currency is independent.</p>
+      </div>
+      <div class="app-actions">
+        <div class="app-chip-row" data-period-chips role="group" aria-label="Reporting period">
+          <button class="app-chip" type="button" data-period="7">7 days</button>
+          <button class="app-chip is-active" type="button" data-period="30">30 days</button>
+          <button class="app-chip" type="button" data-period="90">90 days</button>
+        </div>
+        <button class="app-btn app-btn--secondary" type="button" data-export-csv>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 19h16"/></svg>
+          Export CSV
+        </button>
+      </div>
+    </div>
+
+    <section class="app-kpis" aria-label="Performance summary">
+      <article class="app-kpi">
+        <div class="app-kpi__label" data-kpi-label="revenue">Revenue · 30 days</div>
+        <div class="app-kpi__value" data-kpi="revenue">$0</div>
+        <div class="app-kpi__meta"><span class="app-delta" data-delta="revenue">+0%</span> <span data-compare>vs previous 30 days</span></div>
+      </article>
+      <article class="app-kpi">
+        <div class="app-kpi__label">Gross margin</div>
+        <div class="app-kpi__value" data-kpi="margin">0%</div>
+        <div class="app-kpi__meta"><span class="app-delta" data-delta="margin">+0 pts</span> <span data-compare>vs previous period</span></div>
+      </article>
+      <article class="app-kpi">
+        <div class="app-kpi__label" data-kpi-label="orders">Orders · 30 days</div>
+        <div class="app-kpi__value" data-kpi="orders">0</div>
+        <div class="app-kpi__meta"><span class="app-delta" data-delta="orders">+0%</span> <span data-compare>vs previous 30 days</span></div>
+      </article>
+      <article class="app-kpi">
+        <div class="app-kpi__label">Avg order value</div>
+        <div class="app-kpi__value" data-kpi="aov">$0</div>
+        <div class="app-kpi__meta"><span class="app-delta" data-delta="aov">+0%</span> <span data-compare>vs previous period</span></div>
+      </article>
+    </section>
+
+    <div class="app-grid">
+      <section class="app-panel" aria-labelledby="productsTitle">
+        <div class="app-panel__head">
+          <h2 class="app-panel__title" id="productsTitle">Top products <small data-period-label>last 30 days</small></h2>
+          <span class="app-badge app-badge--neutral" data-watch-count>0 watched</span>
+        </div>
+        <div class="app-panel__body">
+          <div class="app-toolbar">
+            <label class="app-search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+              <input type="search" data-search placeholder="Search product or category" aria-label="Search products">
+            </label>
+            <div class="app-chip-row" data-category-chips role="group" aria-label="Filter by category">
+              <button class="app-chip is-active" type="button" data-category="all">All</button>
+              <button class="app-chip" type="button" data-category="Software">Software</button>
+              <button class="app-chip" type="button" data-category="Hardware">Hardware</button>
+              <button class="app-chip" type="button" data-category="Services">Services</button>
+              <button class="app-chip" type="button" data-category="Subscriptions">Subscriptions</button>
+            </div>
+          </div>
+          <div class="app-table-wrap">
+            <table class="app-table" id="productsTable">
+              <thead>
+                <tr>
+                  <th scope="col">Product</th>
+                  <th scope="col" class="num">Units</th>
+                  <th scope="col" class="num">Revenue</th>
+                  <th scope="col" class="num">Margin</th>
+                  <th scope="col">Trend</th>
+                  <th scope="col" class="actions">Action</th>
+                </tr>
+              </thead>
+              <tbody data-rows></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="app-panel__foot">
+          <span data-table-foot>8 products · sample catalogue</span>
+          <span data-data-note>Sample data · display currency only</span>
+        </div>
+      </section>
+
+      <div class="app-grid app-grid--wide">
+        <section class="app-panel" aria-labelledby="trendTitle">
+          <div class="app-panel__head">
+            <h2 class="app-panel__title" id="trendTitle">Revenue trend</h2>
+            <span class="app-badge app-badge--info" data-period-badge>30 days</span>
+          </div>
+          <div class="app-panel__body">
+            <div data-chart></div>
+            <div class="app-rows" data-chart-rows></div>
+          </div>
+        </section>
+
+        <section class="app-panel" aria-labelledby="mixTitle">
+          <div class="app-panel__head">
+            <h2 class="app-panel__title" id="mixTitle">Category mix</h2>
+            <span class="app-badge app-badge--neutral" data-mix-badge>0 categories</span>
+          </div>
+          <div class="app-panel__body">
+            <div data-donut></div>
+            <div class="app-rows" data-legend></div>
+            <p class="app-note">Revenue split by catalogue category for the selected period.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="app-grid app-grid--2">
+      <section class="app-panel" aria-labelledby="channelsTitle">
+        <div class="app-panel__head">
+          <h2 class="app-panel__title" id="channelsTitle">Performance by channel</h2>
+          <span class="app-badge app-badge--neutral" data-period-badge>30 days</span>
+        </div>
+        <div class="app-panel__body">
+          <div class="app-rows" data-channels></div>
+          <p class="app-note">Revenue and order counts are sample values for this period.</p>
+        </div>
+      </section>
+
+      <section class="app-panel" aria-labelledby="activityTitle">
+        <div class="app-panel__head">
+          <h2 class="app-panel__title" id="activityTitle">Recent activity</h2>
+          <span class="app-badge app-badge--info">Live sample</span>
+        </div>
+        <div class="app-panel__body">
+          <div class="app-activity" data-activity></div>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<script src="../assets/js/currency.js?v=20261021i" defer></script>
+<script src="../assets/js/app.js?v=20261021i" defer></script>
+<script src="../assets/js/main.js?v=20261021i" defer></script>
+<script src="../assets/js/demos/analytics.js?v=20261021i" defer></script>
+</body>
+</html>

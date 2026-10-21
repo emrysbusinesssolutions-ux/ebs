@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accounting &amp; finance — EBS Enterprise Demo</title>
+<meta name="description" content="Interactive accounting demo: invoices, bills, P&L summary, cash position and a journal entry drawer — sample data, USD base with local currency display.">
+<link rel="canonical" href="https://emrysbusinesssolutions-ux.github.io/ebs/demos/accounting.html">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a1024">
+<meta property="og:image" content="https://emrysbusinesssolutions-ux.github.io/ebs/assets/img/og.jpg">
+<link rel="icon" href="../assets/img/favicon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="preload" href="../assets/fonts/inter-tight-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/instrument-sans-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/style.css?v=20261021i">
+<link rel="stylesheet" href="../assets/css/app.css?v=20261021i">
+</head>
+<body class="app-body" data-module="accounting">
+<header class="app-topbar">
+  <div class="app-topbar__left">
+    <a class="app-brand" href="../index.html" aria-label="Emrys Business Solutions home">
+      <img src="../assets/img/ebs-logo-circle-96.png" alt="" width="28" height="28">
+      <span>Emrys <b>Demo</b></span>
+    </a>
+    <span class="app-env">Sample data · no live records</span>
+  </div>
+  <div class="app-topbar__right">
+    <label class="app-currency"><span>Currency</span><select data-currency-select aria-label="Display currency"></select></label>
+    <a class="app-topbar__link" href="../demo.html">All demos</a>
+    <a class="app-topbar__link" href="../index.html">Website</a>
+    <a class="app-btn app-btn--primary" href="../contact.html">Book a demo</a>
+    <button class="app-menu" type="button" data-app-menu aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="app-shell">
+  <aside class="app-side" id="appSide">
+    <div class="app-side__group"><span>Operations</span>
+      <a class="app-nav" data-nav="pos" href="pos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M7 20h10M12 16v4"/></svg>POS &amp; checkout</a>
+      <a class="app-nav" data-nav="inventory" href="inventory.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></svg>Inventory</a>
+      <a class="app-nav" data-nav="purchasing" href="purchasing.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M6 6v14h12V6M9 10h6"/></svg>Purchasing</a>
+      <a class="app-nav" data-nav="warehouse" href="warehouse.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13M3 21h18M9 21v-6h6v6"/></svg>Warehouse</a>
+    </div>
+    <div class="app-side__group"><span>People &amp; finance</span>
+      <a class="app-nav" data-nav="crm" href="crm.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>CRM</a>
+      <a class="app-nav" data-nav="hr" href="hr.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg>HR &amp; payroll</a>
+      <a class="app-nav" data-nav="accounting" href="accounting.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3h16v18H4zM8 7h8M8 11h8M8 15h5"/></svg>Accounting</a>
+      <a class="app-nav" data-nav="projects" href="projects.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4zM8 8h8M8 12h5"/></svg>Projects</a>
+    </div>
+    <div class="app-side__group"><span>Growth</span>
+      <a class="app-nav" data-nav="analytics" href="analytics.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15v-4M12 15V7M17 15v-6"/></svg>Analytics</a>
+      <a class="app-nav" data-nav="ecommerce" href="ecommerce.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6 5 3H2"/></svg>E-commerce</a>
+    </div>
+    <div class="app-side__foot">
+      <div class="app-side__note"><b>Sample workspace.</b><br>USD base · switch display currency. No live records or payments.</div>
+      <a href="../demo.html">All demos</a>
+      <a href="../index.html">Back to website</a>
+    </div>
+  </aside>
+
+  <main class="app-main">
+    <div class="app-head">
+      <div>
+        <p class="app-eyebrow">Finance · Module 09</p>
+        <h1>Accounting &amp; finance</h1>
+        <p class="app-sub">Receivables, payables, profit and loss in one ledger. Record a journal entry or settle an invoice on illustrative data — nothing is posted to a real ledger.</p>
+      </div>
+      <div class="app-actions">
+        <button class="app-btn app-btn--secondary" type="button" data-export-csv>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 19h16"/></svg>
+          Export CSV
+        </button>
+        <button class="app-btn app-btn--primary" type="button" data-entry>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          Record entry
+        </button>
+      </div>
+    </div>
+
+    <section class="app-kpis" aria-label="Financial summary">
+      <article class="app-kpi">
+        <div class="app-kpi__label">Revenue · month</div>
+        <div class="app-kpi__value" data-kpi="revenue">$0</div>
+        <div class="app-kpi__meta"><span class="app-delta">+9.4%</span> vs last month</div>
+      </article>
+      <article class="app-kpi">
+        <div class="app-kpi__label">Expenses · month</div>
+        <div class="app-kpi__value" data-kpi="expenses">$0</div>
+        <div class="app-kpi__meta"><span class="app-delta app-delta--warn">+3.1%</span> vs last month</div>
+      </article>
+      <article class="app-kpi">
+        <div class="app-kpi__label">Net profit · month</div>
+        <div class="app-kpi__value" data-kpi="net">$0</div>
+        <div class="app-kpi__meta" data-kpi-meta="net">Margin 0%</div>
+      </article>
+      <article class="app-kpi">
+        <div class="app-kpi__label">Receivables</div>
+        <div class="app-kpi__value" data-kpi="receivables">$0</div>
+        <div class="app-kpi__meta" data-kpi-meta="receivables">Open invoices · sample ledger</div>
+      </article>
+    </section>
+
+    <div class="app-grid">
+      <section class="app-panel" aria-labelledby="ledgerTitle">
+        <div class="app-panel__head">
+          <h2 class="app-panel__title" id="ledgerTitle">Invoices &amp; bills <small data-ledger-count>13 entries</small></h2>
+          <span class="app-badge app-badge--neutral">Sample ledger</span>
+        </div>
+        <div class="app-tabs" data-tabs role="tablist" aria-label="Ledger view">
+          <button class="app-tab is-active" type="button" role="tab" aria-selected="true" data-tab="invoices">Invoices <span data-tab-count="invoices">8</span></button>
+          <button class="app-tab" type="button" role="tab" aria-selected="false" data-tab="bills">Bills <span data-tab-count="bills">5</span></button>
+        </div>
+        <div class="app-panel__body">
+          <div class="app-toolbar">
+            <label class="app-search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+              <input type="search" data-search placeholder="Search number or party" aria-label="Search ledger">
+            </label>
+            <select class="app-select" data-status aria-label="Filter by status">
+              <option value="all">All statuses</option>
+              <option value="open">Open</option>
+              <option value="paid">Paid</option>
+              <option value="overdue">Overdue</option>
+            </select>
+            <div class="app-chip-row" data-status-chips role="group" aria-label="Quick status filter">
+              <button class="app-chip is-active" type="button" data-filter="all">All</button>
+              <button class="app-chip" type="button" data-filter="open">Open</button>
+              <button class="app-chip" type="button" data-filter="paid">Paid</button>
+              <button class="app-chip" type="button" data-filter="overdue">Overdue</button>
+            </div>
+          </div>
+          <div class="app-table-wrap">
+            <table class="app-table" id="ledgerTable">
+              <thead>
+                <tr>
+                  <th scope="col">Number</th>
+                  <th scope="col">Party</th>
+                  <th scope="col">Due date</th>
+                  <th scope="col" class="num">Amount</th>
+                  <th scope="col">Status</th>
+                  <th scope="col" class="actions">Action</th>
+                </tr>
+              </thead>
+              <tbody data-rows></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="app-panel__foot">
+          <span data-table-foot>8 invoices · sample data</span>
+          <span>Amounts in USD base · display currency only</span>
+        </div>
+      </section>
+
+      <div class="app-grid app-grid--wide">
+        <section class="app-panel" aria-labelledby="pnlTitle">
+          <div class="app-panel__head">
+            <h2 class="app-panel__title" id="pnlTitle">Profit &amp; loss <small>October 2025</small></h2>
+            <span class="app-badge app-badge--info" data-margin-badge>Margin 0%</span>
+          </div>
+          <div class="app-panel__body">
+            <div class="app-rows" data-pnl></div>
+            <p class="app-note"><b>Sample P&amp;L.</b> Revenue and expenses update when you post a journal entry.</p>
+          </div>
+        </section>
+
+        <section class="app-panel" aria-labelledby="cashTitle">
+          <div class="app-panel__head">
+            <h2 class="app-panel__title" id="cashTitle">Cash position</h2>
+            <span class="app-badge app-badge--neutral">Last 6 months</span>
+          </div>
+          <div class="app-panel__body">
+            <div data-cash-chart></div>
+            <div class="app-rows">
+              <div class="app-row"><span>Cash on hand</span><b data-cash-note>$0</b></div>
+              <div class="app-row"><span>Net movement · Oct</span><b class="num app-delta" data-cash-move>+$11,500</b></div>
+            </div>
+            <p class="app-note">Indicative cash balances. Display currency changes the numbers, not the underlying USD ledger.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="app-grid app-grid--2">
+      <section class="app-panel" aria-labelledby="agingTitle">
+        <div class="app-panel__head">
+          <h2 class="app-panel__title" id="agingTitle">Receivables aging</h2>
+          <span class="app-badge app-badge--warn" data-open-count>5 open invoices</span>
+        </div>
+        <div class="app-panel__body">
+          <div class="app-rows" data-aging></div>
+          <p class="app-note">Aging buckets reconcile to the receivables KPI. Settling an invoice updates both.</p>
+        </div>
+      </section>
+
+      <section class="app-panel" aria-labelledby="journalTitle">
+        <div class="app-panel__head">
+          <h2 class="app-panel__title" id="journalTitle">Journal &amp; payment activity</h2>
+          <span class="app-badge app-badge--info">Live sample</span>
+        </div>
+        <div class="app-panel__body">
+          <div class="app-activity" data-activity></div>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<script src="../assets/js/currency.js?v=20261021i" defer></script>
+<script src="../assets/js/app.js?v=20261021i" defer></script>
+<script src="../assets/js/main.js?v=20261021i" defer></script>
+<script src="../assets/js/demos/accounting.js?v=20261021i" defer></script>
+</body>
+</html>

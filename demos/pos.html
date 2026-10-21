@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>POS &amp; checkout — EBS Enterprise Demo</title>
+<meta name="description" content="Interactive POS demo: multi-unit selling, live cart, payment methods, receipts and shift reporting — sample data with USD base and local currency display.">
+<link rel="canonical" href="https://emrysbusinesssolutions-ux.github.io/ebs/demos/pos.html">
+<meta name="robots" content="noindex">
+<meta property="og:image" content="https://emrysbusinesssolutions-ux.github.io/ebs/assets/img/og.jpg">
+<meta name="theme-color" content="#0a1024">
+<link rel="icon" href="../assets/img/favicon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="preload" href="../assets/fonts/inter-tight-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/instrument-sans-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/style.css?v=20261021i">
+<link rel="stylesheet" href="../assets/css/app.css?v=20261021i">
+</head>
+<body class="app-body" data-module="pos">
+<header class="app-topbar">
+  <div class="app-topbar__left">
+    <a class="app-brand" href="../index.html" aria-label="Emrys Business Solutions home">
+      <img src="../assets/img/ebs-logo-circle-96.png" alt="" width="28" height="28">
+      <span>Emrys <b>Demo</b></span>
+    </a>
+    <span class="app-env">Sample data · no live records</span>
+  </div>
+  <div class="app-topbar__right">
+    <label class="app-currency"><span>Currency</span><select data-currency-select aria-label="Display currency"></select></label>
+    <a class="app-topbar__link" href="../demo.html">All demos</a>
+    <a class="app-topbar__link" href="../index.html">Website</a>
+    <a class="app-btn app-btn--primary" href="../contact.html">Book a demo</a>
+    <button class="app-menu" type="button" data-app-menu aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="app-shell">
+  <aside class="app-side" id="appSide">
+    <div class="app-side__group"><span>Operations</span>
+      <a class="app-nav" data-nav="pos" href="pos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M7 20h10M12 16v4"/></svg>POS &amp; checkout</a>
+      <a class="app-nav" data-nav="inventory" href="inventory.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></svg>Inventory</a>
+      <a class="app-nav" data-nav="purchasing" href="purchasing.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M6 6v14h12V6M9 10h6"/></svg>Purchasing</a>
+      <a class="app-nav" data-nav="warehouse" href="warehouse.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13M3 21h18M9 21v-6h6v6"/></svg>Warehouse</a>
+    </div>
+    <div class="app-side__group"><span>People &amp; finance</span>
+      <a class="app-nav" data-nav="crm" href="crm.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>CRM</a>
+      <a class="app-nav" data-nav="hr" href="hr.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg>HR &amp; payroll</a>
+      <a class="app-nav" data-nav="accounting" href="accounting.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3h16v18H4zM8 7h8M8 11h8M8 15h5"/></svg>Accounting</a>
+      <a class="app-nav" data-nav="projects" href="projects.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4zM8 8h8M8 12h5"/></svg>Projects</a>
+    </div>
+    <div class="app-side__group"><span>Growth</span>
+      <a class="app-nav" data-nav="analytics" href="analytics.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15v-4M12 15V7M17 15v-6"/></svg>Analytics</a>
+      <a class="app-nav" data-nav="ecommerce" href="ecommerce.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6 5 3H2"/></svg>E-commerce</a>
+    </div>
+    <div class="app-side__foot">
+      <div class="app-side__note"><b>Sample workspace.</b><br>USD base · switch display currency. No live records or payments.</div>
+      <a href="../demo.html">All demos</a>
+      <a href="../index.html">Back to website</a>
+    </div>
+  </aside>
+
+  <main class="app-main">
+    <div class="app-head">
+      <div>
+        <p class="app-eyebrow">Sales · Point of sale</p>
+        <h1>Point of sale</h1>
+        <p class="app-sub">Counter workspace for a multi-unit trading business. Tap a product to build a sale; payment and receipt are demo-only.</p>
+      </div>
+      <div class="app-actions">
+        <button class="app-btn app-btn--secondary" type="button" data-export="#recentSalesTable">Export CSV</button>
+        <button class="app-btn app-btn--primary" type="button" id="newSaleBtn">New sale</button>
+      </div>
+    </div>
+
+    <div class="app-kpis">
+      <div class="app-kpi"><div class="app-kpi__label">Sales today</div><div class="app-kpi__value" id="kpiSales">$8,420</div><div class="app-kpi__meta"><span class="app-delta">+12.4%</span> vs yesterday</div></div>
+      <div class="app-kpi"><div class="app-kpi__label">Transactions</div><div class="app-kpi__value" id="kpiTx">142</div><div class="app-kpi__meta"><span class="app-delta">+8</span> this morning</div></div>
+      <div class="app-kpi"><div class="app-kpi__label">Average sale</div><div class="app-kpi__value" id="kpiAvg">$59.30</div><div class="app-kpi__meta">All channels</div></div>
+      <div class="app-kpi"><div class="app-kpi__label">Refunds</div><div class="app-kpi__value" id="kpiRefunds">$124</div><div class="app-kpi__meta"><span class="app-delta app-delta--warn">0.9%</span> of sales</div></div>
+    </div>
+
+    <div class="app-grid">
+      <section class="app-panel">
+        <div class="app-panel__head">
+          <span class="app-panel__title">Products <small>sample catalogue · USD base</small></span>
+          <span class="app-badge app-badge--neutral">Counter 1</span>
+        </div>
+        <div class="app-panel__body">
+          <div class="app-toolbar">
+            <div class="app-chip-row" id="posCategories" role="group" aria-label="Product category">
+              <button class="app-chip is-active" type="button" data-cat="all">All</button>
+              <button class="app-chip" type="button" data-cat="staples">Staples</button>
+              <button class="app-chip" type="button" data-cat="oils">Oils</button>
+              <button class="app-chip" type="button" data-cat="grocery">Grocery</button>
+              <button class="app-chip" type="button" data-cat="service">Service</button>
+            </div>
+          </div>
+          <div class="pos-grid" id="posProducts"></div>
+          <p class="app-hint" style="margin-top:10px">Prices are sample data. Inventory updates are simulated in this demo.</p>
+        </div>
+      </section>
+
+      <aside class="app-panel">
+        <div class="app-panel__head">
+          <span class="app-panel__title">Current sale <small id="posCartCount">0 items</small></span>
+          <button class="app-btn app-btn--ghost app-btn--sm" type="button" id="clearCartBtn">Clear</button>
+        </div>
+        <div class="app-panel__body">
+          <div class="pos-cart">
+            <div class="pos-cart__list" id="posCartList"></div>
+            <div class="pos-total"><span>Total</span><strong id="posTotal">$0</strong></div>
+            <div class="pos-pay">
+              <select class="app-select" id="posPayment" aria-label="Payment method">
+                <option value="Cash">Cash</option>
+                <option value="Bank transfer">Bank transfer</option>
+                <option value="Card">Card</option>
+                <option value="Credit">Credit</option>
+              </select>
+              <button class="app-btn app-btn--primary" type="button" id="chargeBtn">Charge</button>
+            </div>
+            <p class="pos-note">Demo checkout only — no payment is taken. Currency display is indicative.</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="app-grid app-grid--2" style="margin-top:14px">
+      <section class="app-panel">
+        <div class="app-panel__head"><span class="app-panel__title">Recent sales <small>this shift</small></span><span class="app-badge app-badge--ok">Open shift</span></div>
+        <div class="app-panel__body app-panel__body--flush">
+          <div class="app-table-wrap">
+            <table class="app-table" id="recentSalesTable">
+              <thead><tr><th>Receipt</th><th>Time</th><th>Items</th><th class="num">Amount</th><th>Payment</th><th>Status</th></tr></thead>
+              <tbody id="recentSalesBody"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="app-panel__foot"><span>Sample receipts for this demo only.</span><span id="shiftTotal">Shift total</span></div>
+      </section>
+      <section class="app-panel">
+        <div class="app-panel__head"><span class="app-panel__title">Shift summary</span><button class="app-btn app-btn--ghost app-btn--sm" type="button" id="printShiftBtn">Print summary</button></div>
+        <div class="app-panel__body">
+          <div class="app-rows" id="shiftRows"></div>
+          <div id="shiftChart" style="margin-top:12px"></div>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<script src="../assets/js/currency.js?v=20261021i" defer></script>
+<script src="../assets/js/main.js?v=20261021i" defer></script>
+<script src="../assets/js/app.js?v=20261021i" defer></script>
+<script src="../assets/js/demos/pos.js?v=20261021i" defer></script>
+</body>
+</html>
