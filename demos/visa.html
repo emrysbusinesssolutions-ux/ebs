@@ -247,19 +247,32 @@
               <div class="app-rows" id="cashRows"></div>
             </div>
           </div>
-          <div class="app-grid app-grid--2" style="margin-top:18px">
+          <div class="app-grid app-grid--wide" style="margin-top:18px">
             <div>
               <div class="app-panel__title">Branch contribution <small>revenue · direct costs · margin</small></div>
               <div class="app-table-wrap">
                 <table class="app-table">
-                  <thead><tr><th>Branch</th><th>Cases</th><th>Invoiced</th><th>Costs</th><th>Margin</th></tr></thead>
+                  <thead><tr><th>Branch</th><th>Cases</th><th>Invoiced</th><th>Costs</th><th>Margin</th><th>Margin %</th></tr></thead>
                   <tbody id="branchBody"></tbody>
                 </table>
               </div>
             </div>
+          </div>
+          <div class="app-grid app-grid--2" style="margin-top:18px">
             <div>
               <div class="app-panel__title">Payments &amp; reconciliation</div>
               <div class="app-rows" id="payRows"></div>
+            </div>
+            <div>
+              <div class="app-panel__title">Accounting notes &amp; controls</div>
+              <div class="app-rows">
+                <div class="app-row"><span>Month-end close</span><b>Invoices matched to bank feed · 2 lines to review</b></div>
+                <div class="app-row"><span>Tax treatment</span><b>Government fees are pass-through disbursements</b></div>
+                <div class="app-row"><span>Refund &amp; credit</span><b>3% of service fees held as refund reserve</b></div>
+                <div class="app-row"><span>Currency</span><b>USD base · local receipts translated at month-end rate</b></div>
+                <div class="app-row"><span>Payment approval</span><b>Above $500 requires two-step approval</b></div>
+                <div class="app-row"><span>Document trail</span><b>Receipt, invoice and disbursement voucher linked per case</b></div>
+              </div>
             </div>
           </div>
         </div>
@@ -691,7 +704,8 @@
       <td class="num">${entry.count}</td>
       <td class="num">${money(entry.invoiced)}</td>
       <td class="num">${money(entry.costs)}</td>
-      <td class="num">${money(entry.margin)} <small class="app-hint">${entry.pct}%</small></td>
+      <td class="num">${money(entry.margin)}</td>
+      <td class="num">${entry.pct}%</td>
     </tr>`).join('');
 
     const bank = Math.round((received * 0.62) / 10) * 10;
