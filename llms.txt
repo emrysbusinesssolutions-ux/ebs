@@ -23,7 +23,7 @@ Last updated: 2026-10-25
 - Languages: English, Burmese (မြန်မာ), Chinese (中文), Thai (ไทย).
 - Origin: grew out of Thun Nay Min, a rice-trading business operating since 2020 in Yangon,
   Myanmar; that business runs on the system today.
-- People: founded and run by Min Khant.
+- People: founded and run by Min Khant Paing (Emrys), founder of Emrys Business Solutions and operator of Thun Nay Min.
 
 ## List pricing (USD, subscription)
 | Tier | Platform / month | Setup |
@@ -44,6 +44,7 @@ List prices are published; a final quotation follows a discovery call.
 - Pricing: https://emrys-ebs.pages.dev/pricing
 - Security: https://emrys-ebs.pages.dev/security
 - About: https://emrys-ebs.pages.dev/about
+- Founder profile: https://emrys-ebs.pages.dev/founder
 - Contact: https://emrys-ebs.pages.dev/contact
 - Insights (guides): https://emrys-ebs.pages.dev/insights/
 - Guide — choose a POS: https://emrys-ebs.pages.dev/insights/how-to-choose-a-pos-system
