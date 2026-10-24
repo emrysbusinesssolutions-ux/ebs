@@ -252,7 +252,7 @@
               <div class="app-panel__title">Branch contribution <small>revenue · direct costs · margin</small></div>
               <div class="app-table-wrap">
                 <table class="app-table">
-                  <thead><tr><th>Branch</th><th>Cases</th><th>Invoiced</th><th>Costs</th><th>Margin</th><th>%</th></tr></thead>
+                  <thead><tr><th>Branch</th><th>Cases</th><th>Invoiced</th><th>Costs</th><th>Margin</th></tr></thead>
                   <tbody id="branchBody"></tbody>
                 </table>
               </div>
@@ -691,8 +691,7 @@
       <td class="num">${entry.count}</td>
       <td class="num">${money(entry.invoiced)}</td>
       <td class="num">${money(entry.costs)}</td>
-      <td class="num">${money(entry.margin)}</td>
-      <td class="num">${entry.pct}%</td>
+      <td class="num">${money(entry.margin)} <small class="app-hint">${entry.pct}%</small></td>
     </tr>`).join('');
 
     const bank = Math.round((received * 0.62) / 10) * 10;
