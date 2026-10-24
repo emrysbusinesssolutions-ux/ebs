@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Offline-first POS: selling when the internet drops | EBS</title>
+<meta name="description" content="What offline-first means for a POS, how sync works, what still sells in an outage, and the questions to ask any vendor before you rely on it.">
+<link rel="canonical" href="https://emrys-ebs.pages.dev/insights/offline-first-pos.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Emrys Business Solutions">
+<meta property="og:title" content="Offline-first POS: selling when the internet drops | EBS">
+<meta property="og:description" content="What offline-first means for a POS, how sync works, what still sells in an outage, and the questions to ask any vendor before you rely on it.">
+<meta property="og:url" content="https://emrys-ebs.pages.dev/insights/offline-first-pos.html">
+<meta property="og:image" content="https://emrys-ebs.pages.dev/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a1024">
+<link rel="icon" href="../assets/img/favicon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="preload" href="../assets/fonts/inter-tight-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/instrument-sans-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/style.css?v=20261025a">
+<script>document.documentElement.classList.add('js')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Offline-first POS: keep selling when the internet drops","description":"What offline-first means, how sync and conflicts work, and what to check before relying on it.","datePublished":"2026-10-25","dateModified":"2026-10-25","author":{"@type":"Organization","name":"Emrys Business Solutions","url":"https://emrys-ebs.pages.dev/"},"publisher":{"@type":"Organization","name":"Emrys Business Solutions","logo":{"@type":"ImageObject","url":"https://emrys-ebs.pages.dev/assets/img/ebs-logo-circle-96.png"}},"image":"https://emrys-ebs.pages.dev/assets/img/og.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://emrys-ebs.pages.dev/insights/offline-first-pos.html"},"isPartOf":{"@type":"WebSite","name":"Emrys Business Solutions","url":"https://emrys-ebs.pages.dev/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the POS stop working when the internet goes down?","acceptedAnswer":{"@type":"Answer","text":"No. Selling, receipts and stock work on the local network; remote dashboards and secondary-location sync wait for the connection."}},{"@type":"Question","name":"What if the power goes out?","acceptedAnswer":{"@type":"Answer","text":"A UPS keeps the local server and router alive long enough to close the shift. The system restarts into the same local database."}},{"@type":"Question","name":"Can we still get remote support?","acceptedAnswer":{"@type":"Answer","text":"Yes when the connection is available. The shop keeps trading locally when it is not."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://emrys-ebs.pages.dev/"},{"@type":"ListItem","position":2,"name":"Insights","item":"https://emrys-ebs.pages.dev/insights/"},{"@type":"ListItem","position":3,"name":"Offline-first POS","item":"https://emrys-ebs.pages.dev/insights/offline-first-pos.html"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="../index.html" aria-label="Emrys Business Solutions — home">
+      <span class="brand-mark" aria-hidden="true"><img src="../assets/img/ebs-logo-circle-96.png" alt="" width="40" height="40" decoding="async"></span>
+      <span class="brand-text"><span class="brand-name">Emrys</span><span class="brand-sub">Business Solutions</span></span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="../solutions.html">Solutions</a>
+      <a href="../industries.html">Industries</a>
+      <a href="../case-studies.html">Case studies</a>
+      <a href="../pricing.html">Pricing</a>
+      <a href="../security.html">Security</a>
+      <a href="../about.html">Company</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn--ghost header-link" href="../demo.html">Live demos</a>
+      <label class="currency-picker"><span class="sr-only">Display currency</span><select data-currency-select aria-label="Display currency"></select></label>
+      <a class="btn btn--primary" href="../contact.html">Book a demo</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <nav class="mobile-menu__nav" aria-label="Mobile">
+      <a href="../solutions.html">Solutions</a>
+      <a href="../industries.html">Industries</a>
+      <a href="../case-studies.html">Case studies</a>
+      <a href="../pricing.html">Pricing</a>
+      <a href="../security.html">Security</a>
+      <a href="../about.html">Company</a>
+      <a href="../demo.html">Live demos</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <div class="mobile-menu__actions">
+      <label class="currency-picker currency-picker--block"><span>Display currency</span><select data-currency-select aria-label="Display currency"></select></label>
+      <a class="btn btn--primary btn--block" href="../contact.html">Book a demo</a>
+      <a class="btn btn--secondary btn--block" href="https://t.me/emrysbsolutions_bot" target="_blank" rel="noopener">Message us on Telegram</a>
+    </div>
+    <p class="mobile-menu__meta">Remote worldwide<br>Support in English, မြန်မာ, 中文 and ไทย</p>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero__meta"><span>Insights</span><span>Reliability</span></div>
+      <p class="eyebrow">Guide</p>
+      <h1>Offline-first POS: keep selling when the internet drops</h1>
+      <p class="lead">"Cloud POS" and "offline POS" are not marketing labels — they describe what happens at the counter when the connection fails. In places where power and internet are imperfect, that difference decides whether you can trade at all.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="../contact.html">Book a demo</a>
+        <a class="btn btn--secondary" href="../demo.html">See the demo</a>
+      </div>
+      <p class="page-hero__note">On-premise data · Offline-first · Delivered remotely</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="prose">
+        <p>A cloud POS is a website with a database behind it. When the internet is down, the screen may still load, but saving a sale fails — or silently queues and later loses it. An offline-first POS is built the other way around: the application and database run locally, and the network is an optional extra.</p>
+
+        <h2>What "offline-first" actually means</h2>
+        <p>Offline-first means the primary copy of the data lives on your equipment, and the app is designed to work without a remote server. On a local network, the till, the back-office computer and a stock tablet talk to the same local system. Internet is used for sync, backups and remote support — not for every button press.</p>
+        <p>That design also changes the failure mode. A cloud outage is your outage. A local outage is a hardware problem you can see and fix, with your data still in the building.</p>
+
+        <h2>What keeps working, and what waits</h2>
+        <ul>
+          <li><strong>Keeps working:</strong> selling, printing receipts, stock movements, customer balances, shifts and daily totals on the local network.</li>
+          <li><strong>Waits for the connection:</strong> syncing to a second location, remote dashboards, and some notifications.</li>
+          <li><strong>Depends on hardware:</strong> a dead tablet or router is still a dead tablet or router — no software design fixes that.</li>
+        </ul>
+        <p>The honest question to ask any vendor is not "does it have an offline mode?" but "which of my daily tasks stop, and for how long?" A good answer lists them.</p>
+
+        <h2>How sync works — and what to ask about conflicts</h2>
+        <p>Most offline-first systems record each change locally and send it when a connection returns. The interesting cases are conflicts: two devices editing the same record, or a sale recorded twice. Vendors resolve these differently — some block the operation, some keep the latest change, some merge. Ask to see the rule, and ask who wins when two people edit the same customer balance.</p>
+        <p>For a single shop on one local network, conflicts are rare. For multiple branches, the sync rule is part of the buying decision, not a detail for later.</p>
+
+        <h2>Power cuts and restarts</h2>
+        <p>A local server needs power. A small UPS keeps the server and router alive long enough to close the shift, and an offline-first POS restarts into the same local database rather than waiting for a cloud login. Test this before you commit: unplug the internet, make a sale, restart the machine, and check that the sale is still there.</p>
+
+        <h2>Questions to ask before you rely on it</h2>
+        <ul>
+          <li>Does a sale save when the internet is off — and how do I verify that it did?</li>
+          <li>What happens to a queued change if the device is switched off?</li>
+          <li>Where is the database file, and can I take a copy of it?</li>
+          <li>How are backups restored, and who can do it?</li>
+          <li>What does support look like during an outage — and does it need the same internet?</li>
+        </ul>
+
+        <h2>How EBS fits</h2>
+        <p>EBS systems run as a local server on your premises with offline-first operation as the default. The <a href="../solutions.html">solutions overview</a> lists the modules, <a href="../demo.html">live demos</a> show the interface with sample data, and the <a href="on-premise-vs-cloud-pos.html">on-premise vs cloud comparison</a> covers the data-ownership side.</p>
+
+              <h2>Frequently asked</h2>
+      <details class="faq__item"><summary class="faq__q">Does the POS stop working when the internet goes down?</summary><div class="faq__a"><p>No. Selling, receipts and stock work on the local network; internet-dependent features such as remote dashboards and secondary-location sync wait for the connection to return.</p></div></details>
+      <details class="faq__item"><summary class="faq__q">What if the power goes out?</summary><div class="faq__a"><p>A UPS keeps the local server and router running long enough to close the shift safely. The system restarts into the same local database.</p></div></details>
+      <details class="faq__item"><summary class="faq__q">Can we still get remote support?</summary><div class="faq__a"><p>Yes, when the connection is available. Support sessions use the internet; the shop keeps trading locally if it is not.</p></div></details>
+
+      <div class="callout mt-30">
+        <h2>Related reading</h2>
+        <ul>
+          <li><a href="offline-first-pos.html">Offline-first POS: what it means in a power cut or internet outage</a></li>
+          <li><a href="on-premise-vs-cloud-pos.html">On-premise vs cloud POS: data ownership compared</a></li>
+          <li><a href="pos-wholesale-distributors.html">POS and inventory for wholesale distributors</a></li>
+        </ul>
+        <p class="small muted">Want the short version? <a href="../pricing.html">See list pricing</a> or <a href="../contact.html">book a demo</a> — a person replies.</p>
+      </div>
+      </div>
+    </div>
+  </section>
+  </main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand brand--footer" href="../index.html" aria-label="Emrys Business Solutions — home">
+        <span class="brand-mark" aria-hidden="true"><img src="../assets/img/ebs-logo-circle-96.png" alt="" width="40" height="40" decoding="async"></span>
+        <span class="brand-text"><span class="brand-name">Emrys</span><span class="brand-sub">Business Solutions</span></span>
+      </a>
+      <p>Business systems for growing companies — POS, inventory, CRM and custom web apps. Deployed on your premises, delivered and supported remotely, built by the people who support them.</p>
+      <a class="footer-contact" href="https://t.me/emrysbsolutions_bot" target="_blank" rel="noopener">Telegram — @emrysbsolutions_bot</a>
+      <a class="footer-contact" href="mailto:emrysbusinesssolutions@gmail.com">emrysbusinesssolutions@gmail.com</a>
+      <p class="footer-langs">Support in English · မြန်မာ · 中文 · ไทย</p>
+    </div>
+    <div class="footer-col">
+      <h2>Solutions</h2>
+      <a href="../solutions.html#pos">POS &amp; checkout</a>
+      <a href="../solutions.html#inventory">Inventory &amp; purchasing</a>
+      <a href="../solutions.html#crm">CRM &amp; receivables</a>
+      <a href="../solutions.html#analytics">Analytics &amp; reports</a>
+      <a href="../solutions.html#web">Custom web apps</a>
+      <a href="../solutions.html#automation">Automation</a>
+    </div>
+    <div class="footer-col">
+      <h2>Company</h2>
+      <a href="../about.html">About EBS</a>
+      <a href="../case-studies.html">Case studies</a>
+      <a href="../demo.html">Live demos</a>
+      <a href="../industries.html">Industries</a>
+      <a href="../pricing.html">Pricing</a>
+      <a href="index.html">Insights</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h2>Trust</h2>
+      <a href="../security.html">Security overview</a>
+      <a href="../security.html#sla">Support &amp; SLA</a>
+      <a href="../privacy.html">Privacy policy</a>
+      <a href="../terms.html">Terms of service</a>
+      <a href="../pricing.html#faq">Pricing FAQ</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© <span data-year>2026</span> Emrys Business Solutions. All rights reserved.</p>
+    <p>Remote-first delivery worldwide · Interfaces shown are illustrative.</p>
+  </div>
+</footer>
+
+<script src="../assets/js/currency.js?v=20261025a" defer></script>
+<script src="../assets/js/main.js?v=20261025a" defer></script>
+</body>
+</html>
