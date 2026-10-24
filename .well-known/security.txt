@@ -1,0 +1,5 @@
+Contact: mailto:minkhantpaiii@gmail.com
+Expires: 2027-10-24T00:00:00.000Z
+Preferred-Languages: en, my
+Canonical: https://emrys-ebs.pages.dev/.well-known/security.txt
+Policy: https://emrys-ebs.pages.dev/security
