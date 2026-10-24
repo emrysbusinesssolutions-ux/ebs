@@ -28,6 +28,17 @@ jobs:
         run: |
           mkdir _site
           rsync -a --exclude '.git' --exclude '.github' --exclude '_site' --exclude 'functions' ./ _site/
+      - name: IndexNow ping (Bing / Yandex)
+        run: |
+          python3 - <<'PY' > /tmp/indexnow.json
+          import json, re
+          key = '6326d616e9d8413e68dd7bb5467b34ed'
+          urls = re.findall(r'<loc>([^<]+)</loc>', open('sitemap.xml', encoding='utf-8').read())
+          print(json.dumps({'host': 'emrys-ebs.pages.dev', 'key': key,
+                            'keyLocation': f'https://emrys-ebs.pages.dev/{key}.txt',
+                            'urlList': urls}))
+          PY
+          curl -sS -m 30 -X POST 'https://api.indexnow.org/indexnow'             -H 'Content-Type: application/json' --data-binary @/tmp/indexnow.json || true
       - name: Upload artifact
         uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
         with:
