@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Visa &amp; immigration — EBS Enterprise Demo</title>
 <meta name="description" content="Interactive visa consultancy demo: applicant cases, document checklists with expiry alerts, embassy appointments and fee instalments — fictional sample data.">
-<link rel="canonical" href="https://emrysbusinesssolutions-ux.github.io/ebs/demos/visa.html">
+<link rel="canonical" href="https://emrysbusiness.com/demos/visa.html">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#0a1024">
-<meta property="og:image" content="https://emrysbusinesssolutions-ux.github.io/ebs/assets/img/og.jpg">
+<meta property="og:image" content="https://emrysbusiness.com/assets/img/og.jpg">
 <link rel="icon" href="../assets/img/favicon-64.png" type="image/png">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="preload" href="../assets/fonts/inter-tight-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -56,7 +56,7 @@
       <a class="app-nav" data-nav="visa" href="visa.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M9 16h6"/></svg>Visa &amp; immigration</a>
     </div>
     <div class="app-side__foot">
-      <div class="app-side__note"><b>Sample workspace.</b><br>Fictional applicants and cases · USD base · switch display currency. No real applications or approvals.</div>
+      <div class="app-side__note"><b>Sample workspace.</b><br>Fictional applicants and cases · USD base · accounting and finance sample ledger. No real applications, approvals or payments.</div>
       <a href="../demo.html">All demos</a>
       <a href="../index.html">Back to website</a>
     </div>
@@ -67,7 +67,7 @@
       <div>
         <p class="app-eyebrow"><a href="../demo.html">&larr; All demos</a> · Visa &amp; immigration</p>
         <h1>Immigration case desk</h1>
-        <p class="app-sub">Follow each application from enquiry to post-landing — document checklists, embassy and VFS appointments, fee instalments and an attributed audit trail. Fictional sample cases; USD base with display-currency switching.</p>
+        <p class="app-sub">Follow each application from enquiry to post-landing — document checklists, embassy and VFS appointments, fee instalments, receivables, direct costs and gross margin, plus an attributed audit trail. Fictional sample cases; USD base with display-currency switching.</p>
       </div>
       <div class="app-actions">
         <button class="app-btn app-btn--secondary" type="button" data-export-visa>
@@ -203,6 +203,53 @@
         <div class="app-note"><b>Sample workspace.</b> Fictional applicants, consultants and cases — not legal advice, and no real clients, applications or approvals. Sample data · display currency only · fees quoted in USD.</div>
       </div>
     </div>
+
+      <section class="app-panel" aria-label="Accounting and finance" id="financePanel">
+        <div class="app-panel__head">
+          <div class="app-panel__title">Accounting &amp; finance <small>service fees · government disbursements · gross margin</small></div>
+          <button class="app-btn app-btn--secondary app-btn--sm" type="button" data-finance-export>Export finance CSV</button>
+        </div>
+        <div class="app-panel__body">
+          <div class="app-kpis">
+            <div class="app-kpi"><div class="app-kpi__label">Invoiced · service fees</div><div class="app-kpi__value" id="finInvoiced">—</div><div class="app-kpi__meta" id="finInvoicedMeta">—</div></div>
+            <div class="app-kpi"><div class="app-kpi__label">Receipts recorded</div><div class="app-kpi__value" id="finReceived">—</div><div class="app-kpi__meta" id="finReceivedMeta">—</div></div>
+            <div class="app-kpi"><div class="app-kpi__label">Direct costs</div><div class="app-kpi__value" id="finCosts">—</div><div class="app-kpi__meta" id="finCostsMeta">—</div></div>
+            <div class="app-kpi"><div class="app-kpi__label">Gross margin</div><div class="app-kpi__value" id="finMargin">—</div><div class="app-kpi__meta" id="finMarginMeta">—</div></div>
+          </div>
+          <div class="app-chip-row" id="agingChips" style="margin-top:12px" aria-label="Receivables aging"></div>
+          <div class="app-grid app-grid--2" style="margin-top:18px">
+            <div>
+              <div class="app-panel__title">Client invoices <small>service fee · receipts · balance</small></div>
+              <div class="app-table-wrap">
+                <table class="app-table">
+                  <thead><tr><th>Case</th><th>Client</th><th>Invoiced</th><th>Received</th><th>Balance</th><th>Due</th><th>Status</th></tr></thead>
+                  <tbody id="invoiceBody"></tbody>
+                </table>
+              </div>
+            </div>
+            <div>
+              <div class="app-panel__title">Direct costs <small>disbursements paid for applicants</small></div>
+              <div class="app-table-wrap">
+                <table class="app-table">
+                  <thead><tr><th>Case</th><th>Date</th><th>Type</th><th>Vendor</th><th>Amount</th></tr></thead>
+                  <tbody id="costBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="app-grid app-grid--2" style="margin-top:18px">
+            <div>
+              <div class="app-panel__title">Profit &amp; loss <small>sample ledger</small></div>
+              <div class="app-rows" id="plRows"></div>
+            </div>
+            <div>
+              <div class="app-panel__title">Cash &amp; controls</div>
+              <div class="app-rows" id="cashRows"></div>
+            </div>
+          </div>
+        </div>
+        <div class="app-panel__foot"><span>USD base · illustrative ledger · no real payments</span><span>Sample</span></div>
+      </section>
   </main>
 </div>
 
@@ -496,6 +543,136 @@
     if (audit.length > 40) audit.length = 40;
   };
 
+  function shiftIso(iso, days) {
+    const d = new Date(`${iso}T00:00:00`);
+    d.setDate(d.getDate() + days);
+    return d.toISOString().slice(0, 10);
+  }
+
+  function finance(item) {
+    const govFee = Math.round((item.total * 0.30) / 10) * 10;
+    const translation = 40 + (item.total % 50);
+    const courier = 20 + (item.total % 20);
+    const commission = Math.round(item.total * 0.05);
+    const costs = govFee + translation + courier + commission;
+    const margin = item.total - costs;
+    return { govFee, translation, courier, commission, costs, margin, marginPct: item.total ? Math.round((margin / item.total) * 100) : 0 };
+  }
+
+  function financeOf(item) {
+    const f = finance(item);
+    return { ...f, invoiced: item.total, received: item.paid, balance: balance(item), overdueDays: Math.max(0, -dayDiff(item.feeDue)) };
+  }
+
+  function costEntries() {
+    const out = [];
+    cases.forEach(item => {
+      const f = finance(item);
+      const base = item.lodged || item.opened;
+      out.push({ date: base, caseId: item.id, type: 'Government fee', vendor: 'Embassy / VFS centre', amount: f.govFee });
+      out.push({ date: shiftIso(item.opened, 3), caseId: item.id, type: 'Translation', vendor: 'Certified translator', amount: f.translation });
+      out.push({ date: shiftIso(base, 2), caseId: item.id, type: 'Courier', vendor: 'Courier partner', amount: f.courier });
+      out.push({ date: item.feeDue, caseId: item.id, type: 'Agent commission', vendor: 'Referral agent', amount: f.commission });
+    });
+    return out.sort((a, b) => b.date.localeCompare(a.date));
+  }
+
+  function invoiceTone(row) {
+    if (row.balance === 0) return 'ok';
+    if (row.overdueDays > 30) return 'bad';
+    if (row.overdueDays > 0) return 'warn';
+    return 'info';
+  }
+
+  function invoiceStatusText(row) {
+    if (row.balance === 0) return 'Settled';
+    if (row.overdueDays > 0) return `Overdue ${row.overdueDays}d`;
+    return `Due ${fmtShort(row.dueDate)}`;
+  }
+
+  function renderFinance() {
+    const rows = cases.map(item => ({ ...financeOf(item), dueDate: item.feeDue, name: item.name, id: item.id }));
+    const sum = key => rows.reduce((total, row) => total + row[key], 0);
+    const invoiced = sum('invoiced');
+    const received = sum('received');
+    const costs = sum('costs');
+    const margin = invoiced - costs;
+    const marginPct = invoiced ? Math.round((margin / invoiced) * 100) : 0;
+    const ar = sum('balance');
+
+    $('#finInvoiced').textContent = money(invoiced);
+    $('#finInvoicedMeta').textContent = `${rows.length} client invoices · USD base`;
+    $('#finReceived').textContent = money(received);
+    $('#finReceivedMeta').textContent = `${invoiced ? Math.round((received / invoiced) * 100) : 0}% collected`;
+    $('#finCosts').textContent = money(costs);
+    $('#finCostsMeta').textContent = 'gov fees · translation · courier · commission';
+    $('#finMargin').textContent = money(margin);
+    $('#finMarginMeta').textContent = `${marginPct}% gross margin`;
+
+    const buckets = [
+      { label: 'Current', tone: 'ok', test: row => row.overdueDays === 0 },
+      { label: '1–30 days', tone: 'warn', test: row => row.overdueDays >= 1 && row.overdueDays <= 30 },
+      { label: '31–60 days', tone: 'warn', test: row => row.overdueDays >= 31 && row.overdueDays <= 60 },
+      { label: '61–90 days', tone: 'bad', test: row => row.overdueDays >= 61 && row.overdueDays <= 90 },
+      { label: '90+ days', tone: 'bad', test: row => row.overdueDays > 90 }
+    ];
+    const aging = buckets.map(bucket => {
+      const list = rows.filter(row => row.balance > 0 && bucket.test(row));
+      return `<span class="app-badge app-badge--${bucket.tone}">${bucket.label} · ${list.length} · ${money(list.reduce((total, row) => total + row.balance, 0))}</span>`;
+    }).join('');
+    const overdueAr = rows.filter(row => row.overdueDays > 0).reduce((total, row) => total + row.balance, 0);
+    $('#agingChips').innerHTML = `${aging}<span class="app-badge app-badge--neutral">Overdue AR · ${money(overdueAr)}</span>`;
+
+    $('#invoiceBody').innerHTML = rows.map(row => `<tr>
+      <td><b>${esc(row.id)}</b></td>
+      <td>${esc(row.name)}</td>
+      <td class="num">${money(row.invoiced)}</td>
+      <td class="num">${money(row.received)}</td>
+      <td class="num">${money(row.balance)}</td>
+      <td>${esc(fmtShort(row.dueDate))}</td>
+      <td>${status(invoiceStatusText(row), invoiceTone(row))}</td>
+    </tr>`).join('');
+
+    $('#costBody').innerHTML = costEntries().slice(0, 10).map(entry => `<tr>
+      <td><b>${esc(entry.caseId)}</b></td>
+      <td>${esc(fmtShort(entry.date))}</td>
+      <td>${esc(entry.type)}</td>
+      <td>${esc(entry.vendor)}</td>
+      <td class="num">${money(entry.amount)}</td>
+    </tr>`).join('');
+
+    const govTotal = sum('govFee');
+    const translationTotal = sum('translation');
+    const courierTotal = sum('courier');
+    const commissionTotal = sum('commission');
+    $('#plRows').innerHTML = `
+      <div class="app-row"><span>Service fee revenue</span><b class="num">${money(invoiced)}</b></div>
+      <div class="app-row"><span>Government fees paid on behalf</span><b class="num">−${money(govTotal)}</b></div>
+      <div class="app-row"><span>Translation &amp; courier</span><b class="num">−${money(translationTotal + courierTotal)}</b></div>
+      <div class="app-row"><span>Agent commissions</span><b class="num">−${money(commissionTotal)}</b></div>
+      <div class="app-row"><span><b>Gross profit</b></span><b class="num">${money(margin)}</b></div>
+      <div class="app-row"><span>Gross margin</span><b class="num">${marginPct}%</b></div>`;
+
+    const overdueShare = ar ? Math.round((overdueAr / ar) * 100) : 0;
+    $('#cashRows').innerHTML = `
+      <div class="app-row"><span>Receipts banked</span><b class="num">${money(received)}</b></div>
+      <div class="app-row"><span>Receivables outstanding</span><b class="num">${money(ar)}</b></div>
+      <div class="app-row"><span>Collection rate</span><b class="num">${invoiced ? Math.round((received / invoiced) * 100) : 0}%</b></div>
+      <div class="app-row"><span>Overdue share of AR</span><b class="num">${overdueShare}%</b></div>
+      <div class="app-row"><span>VAT / tax</span><b>Pass-through disbursements documented</b></div>
+      <div class="app-row"><span>Bank reconciliation</span><b>96% matched · 2 lines to review</b></div>
+      <div class="app-row"><span>Refund reserve</span><b>3% of service fees held</b></div>`;
+  }
+
+  function exportFinance() {
+    const rows = [['Case ID', 'Applicant', 'Service fee USD', 'Received USD', 'Balance USD', 'Government fee USD', 'Translation USD', 'Courier USD', 'Commission USD', 'Direct costs USD', 'Gross margin USD', 'Margin %', 'Due date']];
+    cases.forEach(item => {
+      const f = finance(item);
+      rows.push([item.id, item.name, item.total, item.paid, balance(item), f.govFee, f.translation, f.courier, f.commission, f.costs, f.margin, f.marginPct, item.feeDue]);
+    });
+    exportCSV('visa-accounting.csv', rows);
+  }
+
   function docTone(doc) {
     if (doc.expiry) {
       const diff = dayDiff(doc.expiry);
@@ -663,6 +840,7 @@
     renderPipeline();
     renderAppointments();
     renderAudit();
+    renderFinance();
   }
 
   /* ── actions ─────────────────────────────────────────────────────────── */
@@ -755,6 +933,17 @@
         <div class="app-row"><span>Balance</span><b>${money(balance(item))}</b></div>
         <div class="app-row"><span>Due date</span><b>${fmtDate(item.feeDue)}</b></div>
         <div class="app-row"><span>Instalments</span><b>${item.paid >= item.total ? 'Settled in full' : item.paid > 0 ? 'Deposit received' : 'Not started'}</b></div>
+      </div>
+
+      <div class="app-panel__title">Accounting &amp; finance <small>per-case margin</small></div>
+      <div class="app-rows">
+        <div class="app-row"><span>Service fee invoiced</span><b>${money(item.total)}</b></div>
+        <div class="app-row"><span>Government fee (paid on behalf)</span><b>${money(finance(item).govFee)}</b></div>
+        <div class="app-row"><span>Translation &amp; courier</span><b>${money(finance(item).translation + finance(item).courier)}</b></div>
+        <div class="app-row"><span>Agent commission</span><b>${money(finance(item).commission)}</b></div>
+        <div class="app-row"><span>Direct costs total</span><b>${money(finance(item).costs)}</b></div>
+        <div class="app-row"><span>Gross margin</span><b>${money(finance(item).margin)} · ${finance(item).marginPct}%</b></div>
+        <div class="app-row"><span>Invoice status</span><b>${balance(item) === 0 ? 'Settled' : `Outstanding ${money(balance(item))}`}</b></div>
       </div>
 
       <div class="app-panel__title">Appointment &amp; reminder</div>
@@ -999,6 +1188,8 @@
     });
     $('[data-new-case]').addEventListener('click', openNewCase);
     $('[data-export-visa]').addEventListener('click', exportCases);
+    const financeExport = $('[data-finance-export]');
+    if (financeExport) financeExport.addEventListener('click', exportFinance);
     $('#caseBody').addEventListener('click', event => {
       const openBtn = event.target.closest('[data-open]');
       if (openBtn) {
