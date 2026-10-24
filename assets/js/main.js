@@ -261,7 +261,7 @@
         '— Sent from the EBS website enquiry form'
       ].filter(Boolean).join('\n');
       const subject = `Demo request — ${name}${business ? ` (${business})` : ''}`;
-      const mailto = `mailto:minkhantpaiii@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines)}`;
+      const mailto = `mailto:emrysbusinesssolutions@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines)}`;
       const copyBtn = $('#copyDraft');
 
       show('Sending your enquiry…', 'ok');

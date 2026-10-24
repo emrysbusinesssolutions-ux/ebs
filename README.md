@@ -119,7 +119,7 @@ certifications, phone numbers, addresses, uptime percentages or team sizes that 
 deliberately says it is **not** ISO 27001 / SOC 2 certified and that interfaces are illustrative.
 
 **Domain / email** — primary URL is `https://emrys-ebs.pages.dev`; a custom domain can be attached later in Cloudflare Pages.
-Contact email `minkhantpaiii@gmail.com` is live. Before announcing, work through `docs/CONTENT-CHECKLIST.md`; `docs/DEPLOY.md` has the deployment steps.
+Contact email `emrysbusinesssolutions@gmail.com` is live. Before announcing, work through `docs/CONTENT-CHECKLIST.md`; `docs/DEPLOY.md` has the deployment steps.
 
 ---
 
