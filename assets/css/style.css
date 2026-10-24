@@ -1844,3 +1844,6 @@ table.compare .yes{color:var(--ok)}
 /* narrow phones: keep long MMK ranges inside pricing cards */
 @media (max-width:480px){.price__amount.is-local{font-size:1.3rem}}
 @media (max-width:360px){.price__amount.is-local{font-size:1.15rem}}
+
+/* honeypot — hidden from people, visible to simple bots */
+.form-honeypot{position:absolute!important;left:-10000px!important;top:auto!important;width:1px!important;height:1px!important;overflow:hidden!important;}
