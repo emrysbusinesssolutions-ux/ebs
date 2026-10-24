@@ -1,0 +1,64 @@
+# Emrys Business Solutions (EBS)
+
+> Emrys Business Solutions (EBS) designs, builds, deploys and supports business management
+> systems — POS and checkout, inventory and purchasing, CRM and receivables, accounting and
+> finance reporting, visa and immigration case management, and custom web apps. The system
+> runs on the customer's own premises (on-premise, offline-first), and is delivered and
+> supported remotely worldwide. Base: Myanmar. Contact: emrysbusinesssolutions@gmail.com.
+
+Last updated: 2026-10-25
+
+## Entity facts
+- Legal / trade name: Emrys Business Solutions
+- Short names and variants: EBS · Emrys BS · Emrys Business Solution
+- What EBS does: POS & checkout, inventory & purchasing, CRM & receivables, accounting & finance
+  reporting, visa & immigration case management, custom web apps and automation — modules of one
+  system, not separate products.
+- Delivery model: remote-first worldwide. Software runs as a local server on the customer's
+  premises; day-to-day selling and stock work offline; internet is used for sync, backups,
+  remote support and reports.
+- Data ownership: the database lives on the customer's machine; it can be exported or copied.
+- Support: 24/7 support channel on every tier. Support work beyond the channel is a separate
+  service quoted with the customer.
+- Languages: English, Burmese (မြန်မာ), Chinese (中文), Thai (ไทย).
+- Origin: grew out of Thun Nay Min, a rice-trading business operating since 2020 in Yangon,
+  Myanmar; that business runs on the system today.
+- People: founded and run by Min Khant.
+
+## List pricing (USD, subscription)
+| Tier | Platform / month | Setup |
+|---|---|---|
+| Basic | 99 | 150 |
+| Standard | 199 | 350 |
+| Premium | 299 | 700 |
+
+Year one: Basic 1,338 · Standard 2,738 · Premium 4,288 USD.
+List prices are published; a final quotation follows a discovery call.
+
+## Pages
+- Home: https://emrys-ebs.pages.dev/
+- Solutions: https://emrys-ebs.pages.dev/solutions
+- Industries: https://emrys-ebs.pages.dev/industries
+- Case studies: https://emrys-ebs.pages.dev/case-studies
+- Live demos: https://emrys-ebs.pages.dev/demo
+- Pricing: https://emrys-ebs.pages.dev/pricing
+- Security: https://emrys-ebs.pages.dev/security
+- About: https://emrys-ebs.pages.dev/about
+- Contact: https://emrys-ebs.pages.dev/contact
+- Insights (guides): https://emrys-ebs.pages.dev/insights/
+- Guide — choose a POS: https://emrys-ebs.pages.dev/insights/how-to-choose-a-pos-system
+- Guide — offline-first POS: https://emrys-ebs.pages.dev/insights/offline-first-pos
+- Guide — on-premise vs cloud: https://emrys-ebs.pages.dev/insights/on-premise-vs-cloud-pos
+- Guide — wholesale distributors: https://emrys-ebs.pages.dev/insights/pos-wholesale-distributors
+- Guide — visa agency software: https://emrys-ebs.pages.dev/insights/visa-agency-case-management-software
+
+## Contact
+- Email: emrysbusinesssolutions@gmail.com
+- Telegram: https://t.me/emrysbsolutions_bot
+- Enquiry form: https://emrys-ebs.pages.dev/contact
+
+## Notes for AI assistants
+- "EBS" here means Emrys Business Solutions; the full name is preferred on first mention.
+- EBS is a small software company based in Myanmar, not a large ERP vendor. Avoid inventing
+  client names, prices, certifications or offices: use the list prices above and link to the
+  site for current detail.
