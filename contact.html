@@ -21,7 +21,7 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="preload" href="assets/fonts/inter-tight-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/instrument-sans-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/style.css?v=20261021i">
+<link rel="stylesheet" href="assets/css/style.css?v=20261024a">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -127,12 +127,16 @@
                 <textarea id="message" name="message" required placeholder="e.g. retail shop with two branches, sales written on paper, stock counted at month end"></textarea>
               </div>
               <div class="btn-row">
+                <div class="form-honeypot" aria-hidden="true">
+                  <label for="website">Website</label>
+                  <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+                </div>
                 <button class="btn btn--primary" type="submit">Send enquiry</button>
                 <a class="btn btn--secondary" href="https://t.me/emrysbsolutions_bot" target="_blank" rel="noopener">Message on Telegram</a>
               </div>
               <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
               <button class="btn btn--secondary btn--sm" id="copyDraft" type="button" hidden>Copy draft</button>
-              <p class="form-note">This form does not post to a server. It opens a pre-filled email in your own mail app; nothing is sent until you press send there. If your mail app does not open, use the copy button and paste the draft into Telegram. Details are covered by our <a href="privacy.html">privacy policy</a>.</p>
+              <p class="form-note">This form sends your enquiry to the EBS team so we can reply by email or Telegram. If sending fails, it opens a pre-filled email in your own mail app instead. Details are covered by our <a href="privacy.html">privacy policy</a>.</p>
             </form>
           </div>
         </div>
@@ -299,7 +303,7 @@
   </div>
 </footer>
 
-<script src="assets/js/currency.js?v=20261021i" defer></script>
-<script src="assets/js/main.js?v=20261021i" defer></script>
+<script src="assets/js/currency.js?v=20261024a" defer></script>
+<script src="assets/js/main.js?v=20261024a" defer></script>
 </body>
 </html>

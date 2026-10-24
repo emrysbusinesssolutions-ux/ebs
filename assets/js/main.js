@@ -217,7 +217,7 @@
       return el ? String(el.value || '').trim() : '';
     };
 
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', async e => {
       e.preventDefault();
 
       const required = ['name', 'email', 'message'];
@@ -245,7 +245,9 @@
       const phone = value('phone');
       const plan = value('plan');
       const message = value('message');
+      const website = value('website');
 
+      const payload = { name, email, business, phone, plan, message, website };
       const lines = [
         `Name: ${name}`,
         business ? `Business: ${business}` : '',
@@ -258,17 +260,34 @@
         '',
         '— Sent from the EBS website enquiry form'
       ].filter(Boolean).join('\n');
-
       const subject = `Demo request — ${name}${business ? ` (${business})` : ''}`;
       const mailto = `mailto:minkhantpaiii@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines)}`;
-
-      show('Opening your email app with a pre-filled message. If nothing opens, message us on Telegram and paste the same details.', 'ok');
-
-      // store the exact draft so a failed mail client is not a dead end
-      window.__ebsDraft = { subject, body: lines };
       const copyBtn = $('#copyDraft');
-      if (copyBtn) copyBtn.hidden = false;
 
+      show('Sending your enquiry…', 'ok');
+      let sent = false;
+      try {
+        const res = await fetch('/api/enquiry', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const out = await res.json().catch(() => ({}));
+        if (res.ok && out.ok) sent = true;
+      } catch (err) { sent = false; }
+
+      if (sent) {
+        show('Thank you — your enquiry was sent. We usually reply within one business day.', 'ok');
+        form.reset();
+        if (copyBtn) copyBtn.hidden = true;
+        window.__ebsDraft = null;
+        return;
+      }
+
+      // Fallback: the email draft path (works even if the function is unavailable).
+      show('Sending failed — opening your email app with the same details. If nothing opens, use the copy button.', 'err');
+      window.__ebsDraft = { subject, body: lines };
+      if (copyBtn) copyBtn.hidden = false;
       window.location.href = mailto;
     });
 
