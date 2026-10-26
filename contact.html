@@ -18,7 +18,7 @@
 <meta name="theme-color" content="#0a1024">
 <link rel="preload" href="assets/fonts/inter-tight-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/instrument-sans-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/style.css?v=20261025a">
+<link rel="stylesheet" href="assets/css/style.css?v=20261026b">
 <script>document.documentElement.classList.add('js')</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do you work with clients outside Southeast Asia?","acceptedAnswer":{"@type":"Answer","text":"Yes. Delivery is remote-first, so location does not limit us. Tell us where you are and your time zone in the form, and we will propose session times around your working hours."}},{"@type":"Question","name":"What should I prepare before the first call?","acceptedAnswer":{"@type":"Answer","text":"Nothing formal. A rough idea of daily sales, the products or units you sell, how you record stock and who needs access is enough. If you already use a spreadsheet or notebook, keep it nearby."}},{"@type":"Question","name":"Does the enquiry form store my details on a server?","acceptedAnswer":{"@type":"Answer","text":"No. The site has no server-side form handling. Pressing send builds a pre-filled email in your own mail app, and nothing leaves your device until you send it. If your mail app does not open, copy the draft and paste it into Telegram. The privacy policy explains this in full."}},{"@type":"Question","name":"What does it cost?","acceptedAnswer":{"@type":"Answer","text":"Published plans are list prices, not quotes. The pricing page lists what each plan includes and the support allowance. The final quotation follows the discovery call and a written scope."}},{"@type":"Question","name":"Where does our business data live?","acceptedAnswer":{"@type":"Answer","text":"For deployed systems, on your own premises, on a server you control. The product is offline-first, so the shop keeps working if the internet drops. Data ownership, backups and access are covered on the security page ."}},{"@type":"Question","name":"What does EBS stand for?","acceptedAnswer":{"@type":"Answer","text":"EBS stands for Emrys Business Solutions — also written Emrys Business Solution or Emrys BS. It is one company: a small team that builds, deploys and supports business systems."}}]}</script>
   <link rel="icon" href="assets/img/favicon.ico" sizes="any">
@@ -70,7 +70,7 @@
     <div class="mobile-menu__actions">
       <label class="currency-picker currency-picker--block"><span>Display currency</span><select data-currency-select aria-label="Display currency"></select></label>
       <a class="btn btn--primary btn--block" href="contact.html">Book a demo</a>
-      <a class="btn btn--secondary btn--block" href="https://t.me/emrysbsolutions_bot" target="_blank" rel="noopener">Message us on Telegram</a>
+      <a class="btn btn--telegram btn--block" href="https://t.me/emrysbsolutions_bot" target="_blank" rel="noopener">Message us on Telegram</a>
     </div>
     <p class="mobile-menu__meta">Remote worldwide<br>Support in English, မြန်မာ, 中文 and ไทย</p>
   </div>
@@ -135,8 +135,12 @@
                   <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
                 </div>
                 <button class="btn btn--primary" type="submit">Send enquiry</button>
-                <a class="btn btn--secondary" href="https://t.me/emrysbsolutions_bot" target="_blank" rel="noopener">Message on Telegram</a>
+                <a class="btn btn--telegram" href="https://t.me/emrysbsolutions_bot" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21.9 3.4c.3-.9-.5-1.7-1.4-1.4L2.6 8.8c-1 .4-1 1.8 0 2.2l4.7 1.7 1.8 5.6c.3.9 1.4 1.2 2.1.5l2.6-2.5 4.6 3.4c.8.6 1.9.2 2.1-.8l3.4-15.5zM9.3 12.4l8.2-5.1-6.6 6.5-.2 2.9-1.4-4.3z"/></svg>
+                  <span>Message on Telegram</span>
+                </a>
               </div>
+              <p class="form-note form-note--telegram"><strong>Prefer chat?</strong> Telegram is usually the quickest way to reach a person — message us there and we will reply in the chat.</p>
               <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
               <button class="btn btn--secondary btn--sm" id="copyDraft" type="button" hidden>Copy draft</button>
               <p class="form-note">This form sends your enquiry to the EBS team so we can reply by email or Telegram. If sending fails, it opens a pre-filled email in your own mail app instead. Details are covered by our <a href="privacy.html">privacy policy</a>.</p>
@@ -313,7 +317,7 @@
   </div>
 </footer>
 
-<script src="assets/js/currency.js?v=20261025a" defer></script>
-<script src="assets/js/main.js?v=20261025a" defer></script>
+<script src="assets/js/currency.js?v=20261026b" defer></script>
+<script src="assets/js/main.js?v=20261026b" defer></script>
 </body>
 </html>

@@ -1847,3 +1847,18 @@ table.compare .yes{color:var(--ok)}
 
 /* honeypot — hidden from people, visible to simple bots */
 .form-honeypot{position:absolute!important;left:-10000px!important;top:auto!important;width:1px!important;height:1px!important;overflow:hidden!important;}
+
+/* ── Telegram CTA (contact form + menus) ────────────────────────────────── */
+.btn--telegram{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  background:#1878A8;border:1px solid #1878A8;color:#fff;font-weight:700;
+  box-shadow:0 10px 26px -16px rgba(24,120,168,.85),inset 0 1px 0 rgba(255,255,255,.16);
+  transition:background .18s ease,box-shadow .18s ease,transform .18s ease,border-color .18s ease;
+}
+.btn--telegram:hover{background:#126B92;border-color:#126B92;color:#fff;transform:translateY(-1px);box-shadow:0 16px 34px -18px rgba(24,120,168,.9)}
+.btn--telegram:active{transform:translateY(0);box-shadow:0 8px 20px -16px rgba(24,120,168,.8)}
+.btn--telegram:focus-visible{outline:3px solid rgba(24,120,168,.35);outline-offset:2px}
+.btn--telegram svg{width:19px;height:19px;flex:none;fill:currentColor}
+.form-note--telegram{margin-top:14px}
+.form-note--telegram strong{color:var(--ink)}
+@media(max-width:560px){.btn--telegram{width:100%}}
