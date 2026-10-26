@@ -16,7 +16,7 @@
   const resetBtn = document.getElementById('demoReset');
 
   const cart = new Map();
-  const fmt = n => window.EBSMoney ? window.EBSMoney.formatMoney(n) : `$${Number(n).toLocaleString('en-US')}`;
+  const fmt = n => window.EBSMoney ? window.EBSMoney.formatMoney(n) : `฿${Number(n).toLocaleString('en-US')}`;
   let toastTimer = 0;
 
   const totals = () => {
