@@ -320,3 +320,18 @@
   /* ── mark active nav after load ───────────────────────────────────────── */
   markActive();
 })();
+
+  /* ── Telegram CTA ripple ──────────────────────────────────────────────── */
+  document.querySelectorAll('.btn--telegram').forEach(btn => {
+    btn.addEventListener('click', e => {
+      const r = btn.getBoundingClientRect();
+      const size = Math.max(r.width, r.height);
+      const span = document.createElement('span');
+      span.className = 'tg-ripple';
+      span.style.width = span.style.height = size + 'px';
+      span.style.left = ((e.clientX || r.left + r.width / 2) - r.left - size / 2) + 'px';
+      span.style.top = ((e.clientY || r.top + r.height / 2) - r.top - size / 2) + 'px';
+      btn.appendChild(span);
+      setTimeout(() => span.remove(), 700);
+    }, { passive: true });
+  });

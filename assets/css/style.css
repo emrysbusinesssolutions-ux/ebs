@@ -1862,3 +1862,28 @@ table.compare .yes{color:var(--ok)}
 .form-note--telegram{margin-top:14px}
 .form-note--telegram strong{color:var(--ink)}
 @media(max-width:560px){.btn--telegram{width:100%}}
+
+/* Telegram CTA — active idle motion + click ripple (reduced-motion safe) */
+.btn--telegram{position:relative;overflow:hidden;isolation:isolate;
+  animation:ebs-tg-breathe 3.2s ease-in-out infinite}
+@keyframes ebs-tg-breathe{
+  0%,100%{transform:translateY(0);box-shadow:0 10px 26px -16px rgba(24,120,168,.85),0 0 0 0 rgba(24,120,168,.28),inset 0 1px 0 rgba(255,255,255,.16)}
+  50%{transform:translateY(-2px);box-shadow:0 16px 34px -16px rgba(24,120,168,.95),0 0 0 7px rgba(24,120,168,0),inset 0 1px 0 rgba(255,255,255,.16)}
+}
+.btn--telegram::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:45%;
+  background:linear-gradient(105deg,transparent,rgba(255,255,255,.30),transparent);
+  transform:skewX(-18deg);animation:ebs-tg-shine 4.6s ease-in-out infinite;pointer-events:none}
+@keyframes ebs-tg-shine{0%,62%{left:-60%}88%,100%{left:130%}}
+.btn--telegram:hover{animation-play-state:paused}
+.btn--telegram:hover::after{animation-play-state:paused}
+.btn--telegram:active{transform:scale(.97);animation:none}
+.btn--telegram .tg-ripple{position:absolute;border-radius:999px;background:rgba(255,255,255,.5);
+  transform:scale(0);animation:ebs-tg-ripple .65s ease-out forwards;pointer-events:none;z-index:2}
+@keyframes ebs-tg-ripple{to{transform:scale(2.8);opacity:0}}
+.btn--telegram svg{transition:transform .2s ease}
+.btn--telegram:hover svg{transform:translateX(2px) rotate(-8deg)}
+@media (prefers-reduced-motion: reduce){
+  .btn--telegram{animation:none}
+  .btn--telegram::after{display:none}
+  .btn--telegram:hover svg{transform:none}
+}
