@@ -25,15 +25,15 @@ Last updated: 2026-10-25
   Myanmar; that business runs on the system today.
 - People: founded and run by Min Khant Paing (Emrys), founder of Emrys Business Solutions and operator of Thun Nay Min.
 
-## List pricing (USD, subscription)
+## List pricing (THB, subscription)
 | Tier | Platform / month | Setup |
 |---|---|---|
-| Basic | 99 | 150 |
-| Standard | 199 | 350 |
-| Premium | 299 | 700 |
+| Basic | 3,000 | 5,900 |
+| Standard | 6,000 | 11,900 |
+| Premium | 15,000 | 25,900 |
 
-Year one: Basic 1,338 · Standard 2,738 · Premium 4,288 USD.
-List prices are published; a final quotation follows a discovery call.
+Year one: Basic 41,900 · Standard 83,900 · Premium 205,900 THB.
+List prices are published; a final quotation follows a discovery call. All prices are in Thai baht (THB).
 
 ## Pages
 - Home: https://emrys-ebs.pages.dev/
